@@ -75,12 +75,28 @@ table {
 				<td><a>下記を入力してログインをお願いします。</a></td>
 			</tr>
 			<tr>
-				<td><label>ユーザーID：</label></td>
-				<td><s:textfield name="userId" escape="false" /></td>
+				<td>
+					<label>ユーザー名：</label>
+				</td>
+				<td>
+					<s:textfield name="userName" escape="false" />
+				</td>
 			</tr>
 			<tr>
-				<td><label>パスワード：</label></td>
-				<td><s:password name="password" escape="false" /></td>
+				<td>
+					<label>ユーザーID：</label>
+				</td>
+				<td>
+					<s:textfield name="userId" escape="false" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>パスワード：</label>
+				</td>
+				<td>
+					<s:password name="password" escape="false" />
+				</td>
 			</tr>
 			<tr>
 				<s:submit value="ログイン" />

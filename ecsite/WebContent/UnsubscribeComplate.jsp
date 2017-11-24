@@ -13,9 +13,9 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>UserCreateComplate画面</title>
+	<title>BuyItemComplate画面</title>
 	<style type="text/css">
-		/* ========TAG LAYOUT======== */
+	/* ========TAG LAYOUT======== */
 		body {
 		   margin:0;
 		   padding:0;
@@ -32,7 +32,7 @@
 			margin:0 auto;
 		}
 
-		/* ========ID LAYOUT======== */
+	/* ========ID LAYOUT======== */
 		#top {
 		   width:780px;
 		   margin:30px auto;
@@ -66,20 +66,19 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>登録完了！！！</p>
+			<p>退会完了しました。</p>
 		</div>
-		<div><br>
-			<h3>ユーザーの登録が完了致しました。</h3>
-
+		<div>
+			<p>退会完了致しました。</p>
+			<p>今までご利用ありがとうございました。</p>
 			<div>
-				<a href='<s:url action="HomeAction" />'>ログインへ</a>
+				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 			</div>
 		</div>
 	</div>
 	<div id="footer">
-	 	<div id="pr">
+		<div id="pr">
 		</div>
 	</div>
 </body>
 </html>
-

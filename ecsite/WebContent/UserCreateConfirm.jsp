@@ -106,7 +106,7 @@
 							<label>性別</label>
 						</td>
 						<td>
-							<s:property value="sex" escape="false" />
+							<s:property value="genderStr" escape="false" />
 						</td>
 					</tr>
 					<tr>
@@ -184,7 +184,7 @@
 					</tr>
 					<tr>
 						<td>
-							<s:submit value="完了" />
+							<s:submit value="確認完了" />
 						</td>
 					</tr>
 				</s:form>

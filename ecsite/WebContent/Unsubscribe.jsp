@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
@@ -15,7 +14,7 @@
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<title>BuyItemConfirm画面</title>
+	<title>退会画面</title>
 	<style type="text/css">
 	/* ========TAG LAYOUT======== */
 		body {
@@ -74,80 +73,26 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>購入最終確認画面</p>
+			<p>退会手続き</p>
 		</div>
 		<div>
-			<s:form>
-
+		<table>
 				<tr>
 					<td>
-						<label>氏名</label>
-					</td>
-					<td>
-						<s:property value="#session.userName" />
+						<p>本当に退会で宜しいでしょうか</p>
+						<p>退会する方は「退会」ボタンを押してください。</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>お届け先</label>
-					</td>
-					<td>
-						<s:property value="#session.address" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>商品名</label>
-					</td>
-					<td>
-						<s:property value="itemName" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>値段</label>
-					</td>
-					<td>
-						<s:property value="#session.price" /><span>円</span>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label>購入個数</label>
-					</td>
-					<td>
-						<s:property value="#session.count" /><span>個</span>
+						<form action="UnsubscribeComplateAction" method="POST">
+							<input type="submit" value="退会">
+							<input type="hidden" name="deleteFlg" value="1">
+						</form>
 					</td>
 				</tr>
 
-				<tr>
-					<td>支払い方法</td>
-					<td><s:property value="payment" /></td>
-				</tr>
-				<tr>
-					<td>お届け方法</td>
-					<td><s:property value="transport" /></td>
-				</tr>
-				<tr>
-					<td>
-						<label>合計金額</label>
-					</td>
-					<td>
-						<s:property value="#session.amount" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br/>
-					</td>
-				</tr>
-
-
-				<tr>
-					<td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
-					<td><input type="button" value="完了" onclick="submitAction('ConfirmAction')" /></td>
-				</tr>
-			</s:form>
+			</table>
 		</div>
 	</div>
 	<div id="footer">

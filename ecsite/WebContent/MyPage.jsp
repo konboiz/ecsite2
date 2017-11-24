@@ -72,7 +72,7 @@ table {
 
 		<div id="top">
 			<p><s:property value="userName" escape="false"/>さん </p>
-			<p>ログインに成功しました</p>
+			<p>ログインありがとうございます！</p>
 		</div>
 			<div>
 			<table>
@@ -101,7 +101,20 @@ table {
 					</tr>
 				</s:form>
 				</table>
-			</div>
+				<table>
+					<tr>
+						<td>パスワードを変更する場合は</td>
+						<td><a href='<s:url action="UpdatePasswordAction" />'>パスワード変更</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>退会する場合は</td>
+						<td><a href='<s:url action="UnsubscribeAction" />'>退会</a></td>
+					</tr>
+				</table>
+
+	</div>
 	</div>
 
 	<div id="footer">
