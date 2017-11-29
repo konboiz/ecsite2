@@ -2,19 +2,31 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<title>Home画面</title>
-<style type="text/css">
+
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="./css/animate.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+
+
+	<title>Home画面</title>
+
+	<style type="text/css">
 body {
+	height: 660px;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	line-height: 1.6;
@@ -22,7 +34,6 @@ body {
 	font-family: Verdana, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #333;
-	background: #fff;
 }
 
 table {
@@ -31,28 +42,44 @@ table {
 }
 
 /* ========TEMPLATE LAYOUT======== */
-#top {
-	width: 780px;
-	margin: 30px auto;
-	border: 1px solid #333;
-}
-
 #header {
-	width: 100%;
-	height: 80px;
-	background-color: black;
+	font-size: 15px;
+    font-family: cursive;
+    width: 100%;
+    height: 100px;
+    background-color: #630e0e;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 13px;
+    font-family: unset;
 }
 
 #main {
 	width: 100%;
-	height: 400px;
+	height: 512px;
 	text-align: center;
+
+
+	/* 画像ファイルの指定*/
+	background-image: url(./img/taluto.jpg);
+	/* 画像を常に天地左右の中央に配置*/
+	background-position: center center;
+	/* 画像をタイル状に繰り返し表示しない*/
+	background-repeat: no-repeat;
+	/* コンテンツの高さが画像の高さより大きい時、動かないように固定*/
+	background-attachment: fixed;
+	/* 表示するコンテナの大きさに基づいて、背景画像を調整*/
+	background-size: cover;
+	/* 背景画像が読み込まれる前に表示される背景のカラー*/
+	background-color:;
 }
 
 #footer {
 	width: 100%;
-	height: 80px;
-	background-color: black;
+	height: 50px;
+	background-color: #630e0e;
 	clear: both;
 }
 
@@ -60,55 +87,85 @@ table {
 	display: inline-block;
 	text-align: center;
 }
+
+#login {
+	margin-top: 0px;
+	margin-left: 800px;
+	width: 120px;
+	height: 100px;
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #333;
+}
+
+#user {
+	margin-top: 60px;
+	margin-left: 800px;
+	width: 120px;
+	height: 100px;
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #333;
+}
 </style>
-</head>
-<body>
+	</head>
+	<body >
 
-	<div id="header">
-		<div id=""></div>
-	</div>
-
-	<div id="main">
-		<!-- ログインの場合はLoginAction  新規作成の場合はMyPageActionに移動させる -->
-		<!-- mainの背景に画像を挿入する予定 -->
-
-		<div id="top">
-			<p>ようこそ！ 〇〇へ!!</p>
-			<p>まずはログインをお願いします!!!!</p>
+		<div id="header">
+			<div id="">
+			<p>ようこそ！ My SWEETSへ!!</p>
+				<p>購入はログインをお願いします!!!!</p>
+			</div>
 		</div>
-			<div>
-			<table>
-				<s:form action="HomeAction" escape="false">
-				<tr>
-					<td>
-					<a>登録済みの方は </a> <s:submit value="ログイン" escape="false"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<br/>
-					</td>
-				</tr>
-				</s:form>
-				<s:form action="GoUserCreateAction" escape="false" >
+
+		<div id="main">
+			<div id="top">
+
+			</div>
+				<div>
+
+					<div id="login">
+					<table>
 					<tr>
 						<td>
-					  <a>まだ登録していない方は</a> <s:submit value="ユーザー登録" escape="false" />
-						</td>
+							<label>登録済みの方は </label>
+						<td>
 					</tr>
-				</s:form>
-				</table>
-			</div>
-	</div>
+					<tr>
+						<td>
+						 	<a href='/ecsite/HomeAction.action' ><br/>ログインへ</a>
+						 </td>
+					<tr>
+					</table>
+					</div>
+					</div>
+					<div id="user">
+					<table>
+						<tr>
+							<td>
+						  		<label>まだ登録していない方は</label>
+						  	</td>
+						</tr>
+						<tr>
+							<td>
+						  		<a href='/ecsite/GoUserCreateAction.action' ><br/>新規登録へ</a>
+							</td>
+						</tr>
 
-	<div id="footer">
-		<div id=""></div>
-	</div>
+					</table>
 
-</body>
-</html>
+					</div>
+
+		</div>
+
+
+		<div id="footer">
+			<div id=""></div>
+		</div>
+
+	</body>
+	</html>

@@ -12,6 +12,8 @@ public class LoginDTO {
 
 	private String address;
 
+	private String tel;
+
 
 	public String getAddress() {
 		return address;
@@ -44,6 +46,12 @@ public class LoginDTO {
 	}
 	public void setLoginFlg(boolean loginFlg) {
 		this.loginFlg = loginFlg;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
 	}
 
 

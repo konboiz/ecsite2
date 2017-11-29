@@ -41,4 +41,9 @@ public class UserCreateConfirmDAO {
 		}
 	}
 
+	public static int UserCreate(String userId) {
+		// TODO 自動生成されたメソッド・スタブ
+		return 0;
+	}
+
 }

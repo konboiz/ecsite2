@@ -24,7 +24,7 @@
 		   font-family:Verdana, Helvetica, sans-serif;
 		   font-size:12px;
 		   color:#333;
-		   background:#fff;
+		   background:#fffdb1;
 		}
 
 		table {
@@ -40,33 +40,43 @@
 		}
 
 		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: black;
+		   font-size: large;
+			font-family: cursive;
+			width: 100%;
+			height: 100px;
+			background-color: #8c2121;
+			color: #FFFFFF;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		#main {
 		   width: 100%;
-		   height: 500px;
+		   height: 472px;
 		   text-align: center;
 		}
 
 		#footer {
 			width: 100%;
 			height: 80px;
-			background-color: black;
+			background-color: #8c2121;
 			clear:both;
 		}
+
+
+
 	</style>
 </head>
 <body>
 	<div id="header">
 	 	<div id="pr">
+	 	<p>新規登録</p>
 		</div>
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>UserCreate</p>
+			<p>下記の入力をお願い致します。</p>
 		</div>
 		<div>
 			<s:if test="errorMassage != ''">
@@ -76,7 +86,7 @@
 			<s:form action="UserCreateAction">
 				<tr>
 					<td>
-						<label>ユーザーID:</label>
+						<label>　　　　　　　　　　　　　　　　ユーザーID：</label>
 					</td>
 					<td>
 						<input type="text" name="userId" value="" />
@@ -84,7 +94,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>パスワード:</label>
+						<label>　　　　　　　　　　　　　　　　パスワード：</label>
 					</td>
 					<td>
 						<input type="text" name="password" value="" />
@@ -92,7 +102,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>氏名(ユーザー名)　※本名での入力をお願いします。</label>
+						<label>　　　　　　　　　　　　　　　　氏名(ユーザー名)：</label>
 					</td>
 					<td>
 						<input type="text" name="first_name" value="" />
@@ -103,18 +113,16 @@
 				</tr>
 				<tr>
 					<td>
-						<label>性別</label>
+						<label>　　　　　　　　　　　　　　　　性別</label>
 					</td>
 					<td>
-					<!-- actionに0,1のint型として送る 　わからなかったら、先生か駒さんに聞く-->
-
 						<input type="checkbox" name="gender" value="0" checked="checked" /> 男
 						<input type="checkbox" name="gender" value="1" />女
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>郵便番号</label>
+						<label>　　　　　　　　　　　　　　　　郵便番号：</label>
 					</td>
 					<td>
 					<!--pc=postal code(郵便番号)の略-->
@@ -127,7 +135,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label> 都道府県</label>
+						<label>　　　　　　　　　　　　　　　　 都道府県：</label>
 					</td>
 					<td>
 					<select name="prefecture">
@@ -185,7 +193,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>市町村区</label>
+						<label>　　　　　　　　　　　　　　　　市町村区：</label>
 					</td>
 					<td>
 						<input type="text" name="city" value="" />
@@ -193,7 +201,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>	町・番地</label>
+						<label>	　　　　　　　　　　　　　　　　町・番地：</label>
 					</td>
 					<td>
 						<input type="text" name="banchi" value="" />
@@ -201,7 +209,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>建物名</label>
+						<label>　　　　　　　　　　　　　　　　建物名：</label>
 					</td>
 					<td>
 						<input type="text"  name="building_name" value="" />
@@ -209,7 +217,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>会社名</label>
+						<label>　　　　　　　　　　　　　　　　会社名：</label>
 					</td>
 					<td>
 						<input type="text" name="company" value="" />
@@ -217,7 +225,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>電話番号</label>
+						<label>　　　　　　　　　　　　　　　　電話番号：</label>
 					</td>
 					<td>
 						<input type="text" name="tel_1" value="" />
@@ -231,7 +239,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>E-メール</label>
+						<label>　　　　　　　　　　　　　　　　E-メール：</label>
 					</td>
 					<td>
 						<input type="text" name="email" value="" />
@@ -246,7 +254,7 @@
 			</s:form>
 			</table>
 			<div>
-				<span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
+				<span>マイページに戻る場合は</span><a href='<s:url action="GoMyPageAction" />'>こちら</a>
 			</div>
 		</div>
 	</div>

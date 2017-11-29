@@ -123,13 +123,13 @@ public class UserCreateAction extends ActionSupport implements SessionAware {
 	 */
 	private String errorMassage;
 
+
+
+
 	/**
 	 * 実行結果
 	 */
 	public String result;
-
-
-
 
 	/**
 	 * 実行メソッド
@@ -141,13 +141,9 @@ public class UserCreateAction extends ActionSupport implements SessionAware {
 		 address = pc + prefecture + city + banchi + building_name + company;
 		 userName = first_name + family_name;
 
-
-
 		/**
 		 * 性別はint型へ変換
 		 */
-
-
 		if (gender == 0) {
 			genderStr = "男";
 		} else {
@@ -261,27 +257,67 @@ public class UserCreateAction extends ActionSupport implements SessionAware {
 		 * ログイン設定
 		 */
 
-		if(!(userId.equals("")) && !(password.equals("")) && !(userName.equals(""))&& !(tel.equals(""))&& !(genderStr.equals(""))) {
 
-			result = SUCCESS;
-
-			session.put("userId", userId);
-			session.put("password", password);
-			session.put("userName", userName);
-			session.put("tel", tel);
-			session.put("address", address);
-			session.put("email", email);
-			session.put("gender" , gender);
+		String result = ERROR;
+		session.put("user_id", null);
 
 
-		} else {
 
-			setErrorMassage("未入力の項目があります。");
-			result = ERROR;
-		}
+			if(userId.length()<1||userId.length()>8){
+				setErrorMassage("ユーザーIDは1文字以上8文字以内で入力してください。");
+			}
+			if(password.length()<1||password.length()>16){
+				setErrorMassage("パスワードは1文字以上16文字以内で入力してください。");
+			}
 
-		return result;
+			if(userId.equals("")||userId.matches("^[ 　]+$")){
+				setErrorMassage("ユーザーIDを入力してください。");
+			}
+
+			if(password.equals("")||password.matches("^[ 　]+$")){
+				setErrorMassage("パスワードを入力してください。");
+			}
+			if(family_name.equals("")||family_name.matches("^[ 　]+$")){
+				setErrorMassage("姓を入力してください。");
+			}
+			if(first_name.equals("")||first_name.matches("^[ 　]+$")){
+				setErrorMassage("名を入力してください。");
+			}
+			if(email.equals("")||email.matches("^[ 　]+$")){
+				setErrorMassage("メールアドレスを入力してください。");
+			}
+			if(family_name.length()<1 || family_name.length()>16){
+				setErrorMassage("姓は1文字以上16文字以下で入力してください。");
+			}
+			if(first_name.length()<1 || first_name.length()>16){
+				setErrorMassage("名は1文字以上16文字以下で入力してください。");
+			}
+			if(email.length()<18 || email.length()>32){
+				setErrorMassage("メールアドレスは18文字以上32文字以下で入力してください。");
+			}
+
+			if (!password.matches("^[-_.,/@+*;:#$%&A-Za-z0-9]+$")) {
+				setErrorMassage("パスワードは半角英数字、半角記号で入力してください。");
+			}
+
+			if (!email.matches("^[a-zA-Z0-9#$%&'_`/=~\\*\\+\\-\\?\\^\\{\\|\\}]+(\\.[a-zA-Z0-9!#$%&'_`/=~\\*\\+\\-\\?\\^\\{\\|\\}]+)*+(.*)@[a-zA-Z0-9][a-zA-Z0-9\\-]*(\\.[a-zA-Z0-9\\-]+)+$")) {
+				setErrorMassage("正しいメールアドレスの形式で入力してください。");
+
+			}  else if(!(userId.equals("")) && !(password.equals("")) && !(userName.equals(""))&& !(tel.equals(""))&& !(genderStr.equals(""))) {
+
+		result = SUCCESS;
+
+		session.put("userId", userId);
+		session.put("password", password);
+		session.put("userName", userName);
+		session.put("tel", tel);
+		session.put("address", address);
+		session.put("email", email);
+		session.put("gender" , gender);
 	}
+			return result;
+	}
+
 
 
 	/**
@@ -475,6 +511,7 @@ public class UserCreateAction extends ActionSupport implements SessionAware {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 
 }

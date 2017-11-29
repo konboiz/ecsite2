@@ -24,7 +24,7 @@
 		   font-family:Verdana, Helvetica, sans-serif;
 		   font-size:12px;
 		   color:#333;
-		   background:#fff;
+		   background:#fffdb1;
 		}
 
 		table {
@@ -42,19 +42,19 @@
 		#header {
 		   width: 100%;
 		   height: 80px;
-		   background-color: black;
+		   background-color: #8c2121;
 		}
 
 		#main {
 		   width: 100%;
-		   height: 500px;
+		   height: 742px;
 		   text-align: center;
 		}
 
 		#footer {
 			width: 100%;
 			height: 80px;
-			background-color: black;
+			background-color: #8c2121;
 			clear:both;
 		}
 	</style>
@@ -66,14 +66,13 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>BuyItemComplate</p>
+			<p>購入有難う御座いました！！！</p>
 		</div>
 		<div>
 			<p>購入手続きが完了致しました。</p>
 			<p>ご注文ありがとうございます。</p>
 			<div>
-				<a href='<s:url action="MyPageAction" />'>マイページ</a><span>から購入履歴の確認が可能です。</span>
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+				<a href='<s:url action="GoMyPageAction" />'>マイページ</a><span>から購入履歴の確認が可能です。</span>
 			</div>
 		</div>
 	</div>

@@ -19,6 +19,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 */
 	private String password;
 
+	private String tel;
+
 
 
 	/**
@@ -44,7 +46,23 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 
 public String execute() throws  SQLException {
+
+	//強制ログイン中
 	String result = ERROR;
+
+	result = SUCCESS;
+	userId = "1111";
+	password = "1111";
+	userName = "てすとてすと";
+	tel = "1111111111";
+	loginDTO.setUserId(userId);
+	loginDTO.setUserName(userName);
+	loginDTO.setPassword(password);
+	loginDTO.setTel(tel);
+	session.put("userId", "1111");
+	session.put("userName", "てすとてすと");
+	session.put("address", "11111111testest");
+	session.put("tel", "1111111111");
 
 	// ログイン実行
 
@@ -63,6 +81,7 @@ public String execute() throws  SQLException {
 						session.put("userId", loginDTO.getUserId());
 						session.put("userName", loginDTO.getUserName());
 						session.put("address", loginDTO.getAddress());
+						session.put("tel", loginDTO.getTel());
 
 
 				result = SUCCESS;
@@ -71,6 +90,8 @@ public String execute() throws  SQLException {
 			}
 			return result;
 			}
+
+
 
 
 	@Override
@@ -103,6 +124,15 @@ public String execute() throws  SQLException {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
 
 
 

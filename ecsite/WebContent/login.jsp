@@ -20,7 +20,7 @@ body {
 	font-family: Verdana, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #333;
-	background: #fff;
+	background: #fffdb1;
 }
 
 table {
@@ -31,32 +31,39 @@ table {
 /* ========TEMPLATE LAYOUT======== */
 #top {
 	width: 780px;
-	margin: 30px auto;
+	margin: 45px auto;
 	border: 1px solid #333;
+	font-size: medium;
+	font-weight: 900;
 }
 
 #header {
 	width: 100%;
 	height: 80px;
-	background-color: black;
+	background-color: #8c2121;
 }
 
 #main {
 	width: 100%;
-	height: 400px;
+	height: 457px;
 	text-align: center;
 }
 
 #footer {
 	width: 100%;
 	height: 80px;
-	background-color: black;
+	background-color: #8c2121;
 	clear: both;
 }
 
 #text-center {
 	display: inline-block;
 	text-align: center;
+}
+
+#log {
+	text-align: center;
+	font-size: medium;
 }
 </style>
 </head>
@@ -68,33 +75,26 @@ table {
 		<div id="top">
 			<p>ログイン画面</p>
 		</div>
-	</div>
+		<div id="log">
+			<p>下記を入力してログインをお願いします　↓　↓　↓</p>
+		</div>
 	<s:form action="LoginAction">
-		<table>
-			<tr>
-				<td><a>下記を入力してログインをお願いします。</a></td>
-			</tr>
+		<table >
 			<tr>
 				<td>
 					<label>ユーザー名：</label>
-				</td>
-				<td>
 					<s:textfield name="userName" escape="false" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<label>ユーザーID：</label>
-				</td>
-				<td>
 					<s:textfield name="userId" escape="false" />
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<label>パスワード：</label>
-				</td>
-				<td>
 					<s:password name="password" escape="false" />
 				</td>
 			</tr>
@@ -111,7 +111,7 @@ table {
 			Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
 		</p>
 	</div>
-
+</div>
 	<div id="footer">
 		<div id="pr"></div>
 	</div>

@@ -11,23 +11,28 @@ import com.localhost.ecsite.util.DBConnector;
 
 public class HistoryDAO {
 
-	public ArrayList<HistoryDTO> getMyPageInfo(String item_id, String item_name) throws SQLException {
+	public ArrayList<HistoryDTO> getMyPageInfo(String user_id) throws SQLException {
 
 		 DBConnector dbConnector = new DBConnector();
 
 		 Connection connection = dbConnector.getConnection();
 
 		ArrayList<HistoryDTO> historyDTO = new ArrayList<HistoryDTO>();
-		String sql = "select*from item_info where item_id = ? and item_name = ?";
+		String sql = "select * from buy_info where user_id = ? ";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, item_id);
-			preparedStatement.setString(2, item_name);
+			preparedStatement.setString(1, user_id);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while(resultSet.next()) {
 				HistoryDTO dto = new HistoryDTO();
+
+				dto.setItemName(resultSet.getString("item_name"));
+				dto.setAmount(resultSet.getInt("amount"));
+				dto.setCount(resultSet.getInt("count"));
+				dto.setPayment(resultSet.getString("payment"));
+				dto.setInsert_date(resultSet.getString("insert_date"));
 
 				historyDTO.add(dto);
 			}

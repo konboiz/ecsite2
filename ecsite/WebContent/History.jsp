@@ -24,7 +24,7 @@
 		   font-family:Verdana, Helvetica, sans-serif;
 		   font-size:12px;
 		   color:#333;
-		   background:#fff;
+		   background:#fffdb1;
 		}
 
 		table {
@@ -42,19 +42,19 @@
 		#header {
 		   width: 100%;
 		   height: 80px;
-		   background-color: black;
+		   background-color: #8c2121;
 		}
 
 		#main {
 		   width: 100%;
-		   height: 500px;
+		   height: 472px;
 		   text-align: center;
 		}
 
 		#footer {
 			width: 100%;
 			height: 80px;
-			background-color: black;
+			background-color: #8c2121;
 			clear:both;
 		}
 
@@ -74,7 +74,7 @@
 			<p>商品履歴</p>
 		</div>
 		<div>
-		<s:if test="historyList == null">
+		<s:if test="myPageList == null">
 			<h3>ご購入情報はありません。</h3>
 		</s:if>
 		<s:elseif test="message == null">
@@ -87,10 +87,10 @@
 				<th>支払い方法</th>
 				<th>購入日</th>
 			</tr>
-			<s:iterator value="historyList">
+			<s:iterator value="myPageList">
 				<tr>
 					<td><s:property value="itemName" /></td>
-					<td><s:property value="price" /><span>円</span></td>
+					<td><s:property value="amount" /><span>円</span></td>
 					<td><s:property value="count" /><span>個</span></td>
 					<td><s:property value="payment" /></td>
 					<td><s:property value="insert_date" /></td>

@@ -4,15 +4,11 @@ public class HistoryDTO {
 
 	public String itemName;
 
-	public String totalPrice;
+	public int amount;
 
-	public String totalCount;
+	public int count;
 
 	public String payment;
-
-	public String userName;
-
-	public String itemId;
 
 	public String insert_date;
 
@@ -24,20 +20,20 @@ public class HistoryDTO {
 		this.itemName = itemName;
 	}
 
-	public String getTotalPrice() {
-		return totalPrice;
+	public int getAmount() {
+		return amount;
 	}
 
-	public void setTotalPrice(String totalPrice) {
-		this.totalPrice = totalPrice;
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
-	public String getTotalCount() {
-		return totalCount;
+	public int getCount() {
+		return count;
 	}
 
-	public void setTotalCount(String totalCount) {
-		this.totalCount = totalCount;
+	public void setCount(int count) {
+		this.count = count;
 	}
 
 	public String getPayment() {
@@ -48,22 +44,6 @@ public class HistoryDTO {
 		this.payment = payment;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getItemId() {
-		return itemId;
-	}
-
-	public void setId(String itemId) {
-		this.itemId = itemId;
-	}
-
 	public String getInsert_date() {
 		return insert_date;
 	}
@@ -72,4 +52,6 @@ public class HistoryDTO {
 		this.insert_date = insert_date;
 	}
 
+
 }
+

@@ -26,7 +26,7 @@
 		   font-family:Verdana, Helvetica, sans-serif;
 		   font-size:12px;
 		   color:#333;
-		   background:#fff;
+		   background:#fffdb1;
 		}
 
 		table {
@@ -44,19 +44,19 @@
 		#header {
 		   width: 100%;
 		   height: 80px;
-		   background-color: black;
+		   background-color: #8c2121;
 		}
 
 		#main {
 		   width: 100%;
-		   height: 500px;
+		   height: 472px;
 		   text-align: center;
 		}
 
 		#footer {
 			width: 100%;
 			height: 80px;
-			background-color: black;
+			background-color: #8c2121;
 			clear:both;
 		}
 	</style>
@@ -81,7 +81,7 @@
 
 				<tr>
 					<td>
-						<label>氏名</label>
+						<label>氏名：</label>
 					</td>
 					<td>
 						<s:property value="#session.userName" />
@@ -89,7 +89,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>お届け先</label>
+						<label>お届け先：</label>
 					</td>
 					<td>
 						<s:property value="#session.address" />
@@ -97,15 +97,21 @@
 				</tr>
 				<tr>
 					<td>
-						<label>商品名</label>
-					</td>
-					<td>
-						<s:property value="itemName" />
+						<s:hidden name="itemId" value="%{itemId}" />
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>値段</label>
+						<label>商品名：</label>
+					</td>
+					<td>
+						<s:property value="itemName" />
+						<input type="hidden" name="itemName" value='<s:property value="itemName" />' />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>値段：</label>
 					</td>
 					<td>
 						<s:property value="#session.price" /><span>円</span>
@@ -113,7 +119,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>購入個数</label>
+						<label>購入個数：</label>
 					</td>
 					<td>
 						<s:property value="#session.count" /><span>個</span>
@@ -121,19 +127,25 @@
 				</tr>
 
 				<tr>
-					<td>支払い方法</td>
-					<td><s:property value="payment" /></td>
+					<td>支払い方法：</td>
+					<td>
+						<s:property value="payment" />
+						<input type="hidden" name="payment" value='<s:property value="payment" />' />
+					</td>
 				</tr>
 				<tr>
-					<td>お届け方法</td>
-					<td><s:property value="transport" /></td>
+					<td>お届け方法：</td>
+					<td>
+						<s:property value="transport" />
+						<input type="hidden" name="transport" value='<s:property value="transport" />' />
+					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>合計金額</label>
+						<label>合計金額：</label>
 					</td>
 					<td>
-						<s:property value="#session.amount" />
+						<s:property value="#session.amount" /><span>円</span>
 					</td>
 				</tr>
 				<tr>

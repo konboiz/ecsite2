@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware{
 
-	public String item_id ;
+	public int item_id ;
 
 	/**
 	 * MyPageDAO
@@ -83,13 +83,13 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	}
 
 
-	public String getItem_id() {
+	public int getItem_id() {
 		return item_id;
 	}
 
 
 
-	public void setItem_id(String item_id) {
+	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}
 

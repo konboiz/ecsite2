@@ -27,7 +27,7 @@ body {
 	font-family: Verdana, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #333;
-	background: #fff;
+	background: #fffdb1;
 }
 
 table {
@@ -45,19 +45,19 @@ table {
 #header {
 	width: 100%;
 	height: 80px;
-	background-color: black;
+	background-color: #8c2121;
 }
 
 #main {
 	width: 100%;
-	height: 500px;
+	height: 472px;
 	text-align: center;
 }
 
 #footer {
 	width: 100%;
 	height: 80px;
-	background-color: black;
+	background-color: #8c2121;
 	clear: both;
 }
 </style>
