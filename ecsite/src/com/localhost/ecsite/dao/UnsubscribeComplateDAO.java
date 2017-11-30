@@ -17,14 +17,14 @@ public class UnsubscribeComplateDAO {
 
 		DBConnector dbConnector = new DBConnector();
 
-		Connection connection = dbConnector.getConnection();
+		Connection con = dbConnector.getConnection();
 
 		String sql = "DELETE FROM user_info= ?";
 
 		PreparedStatement ps;
 		int result =0;
 		try {
-			ps = connection.prepareStatement(sql);
+			ps = con.prepareStatement(sql);
 			ps.setString(1, user_name);
 			ps.setString(2, user_id);
 			ps.setString(3, password);
@@ -34,8 +34,9 @@ public class UnsubscribeComplateDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+
 		} finally {
-			connection.close();
+			con.close();
 		}
 
 		return result;

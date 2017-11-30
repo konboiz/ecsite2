@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>BuyItemComplate画面</title>
+	<title>注文完了画面</title>
 	<style type="text/css">
 	/* ========TAG LAYOUT======== */
 		body {
@@ -32,11 +32,14 @@
 			margin:0 auto;
 		}
 
-	/* ========ID LAYOUT======== */
+		/* ========ID LAYOUT======== */
 		#top {
 		   width:780px;
 		   margin:30px auto;
-		   border:1px solid #333;
+			font-size: 31px;
+   			font-weight: bold;
+    		letter-spacing: 20px;
+    		color: red;
 		}
 
 		#header {
@@ -47,7 +50,7 @@
 
 		#main {
 		   width: 100%;
-		   height: 742px;
+		   height: 472px;
 		   text-align: center;
 		}
 
@@ -56,6 +59,11 @@
 			height: 80px;
 			background-color: #8c2121;
 			clear:both;
+		}
+
+		.kanryo {
+		font-size: 20px;
+    	font-weight: 600;
 		}
 	</style>
 </head>
@@ -68,7 +76,7 @@
 		<div id="top">
 			<p>購入有難う御座いました！！！</p>
 		</div>
-		<div>
+		<div id="kanryo">
 			<p>購入手続きが完了致しました。</p>
 			<p>ご注文ありがとうございます。</p>
 			<div>

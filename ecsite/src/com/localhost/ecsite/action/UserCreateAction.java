@@ -151,104 +151,104 @@ public class UserCreateAction extends ActionSupport implements SessionAware {
 		}
 
 
-		/**
-		 * 都道府県
-		 */
-		if (prefecture.equals("1") ) {
-			prefecture = "北海道";
-		} else if (prefecture.equals("2")){
-			prefecture = "青森県";
-		} else if (prefecture.equals("3")){
-			prefecture = "岩手県";
-		} else if (prefecture.equals("4")){
-			prefecture = "宮城県";
-		} else if (prefecture.equals("5")){
-			prefecture = "秋田県";
-		} else if (prefecture.equals("6")){
-			prefecture = "山形県";
-		} else if (prefecture.equals("7")){
-			prefecture = "福島県";
-		} else if (prefecture.equals("8")){
-			prefecture = "茨城県";
-		} else if (prefecture.equals("9")){
-			prefecture = "栃木県";
-		} else if (prefecture.equals("10")){
-			prefecture = "群馬県";
-		} else if (prefecture.equals("11")){
-			prefecture = "埼玉県";
-		} else if (prefecture.equals("12")){
-			prefecture = "千葉県";
-		} else if (prefecture.equals("13")){
-			prefecture = "東京都";
-		} else if (prefecture.equals("14")){
-			prefecture = "神奈川県";
-		} else if (prefecture.equals("15")){
-			prefecture = "新潟県";
-		} else if (prefecture.equals("16")){
-			prefecture = "富山県";
-		} else if (prefecture.equals("17")){
-			prefecture = "石川県";
-		} else if (prefecture.equals("18")){
-			prefecture = "福井県";
-		} else if (prefecture.equals("19")){
-			prefecture = "山梨県";
-		} else if (prefecture.equals("20")){
-			prefecture = "長野県";
-		} else if (prefecture.equals("21")){
-			prefecture = "岐阜県";
-		} else if (prefecture.equals("22")){
-			prefecture = "静岡県";
-		} else if (prefecture.equals("23")){
-			prefecture = "愛知県";
-		} else if (prefecture.equals("24")){
-			prefecture = "三重県";
-		} else if (prefecture.equals("25")){
-			prefecture = "滋賀県";
-		} else if (prefecture.equals("26")){
-			prefecture = "京都府";
-		} else if (prefecture.equals("27")){
-			prefecture = "大阪府";
-		} else if (prefecture.equals("28")){
-			prefecture = "兵庫県";
-		} else if (prefecture.equals("29")){
-			prefecture = "奈良県";
-		} else if (prefecture.equals("30")){
-			prefecture = "和歌山県";
-		} else if (prefecture.equals("31")){
-			prefecture = "鳥取県";
-		} else if (prefecture.equals("32")){
-			prefecture = "島根県";
-		} else if (prefecture.equals("33")){
-			prefecture = "岡山県";
-		} else if (prefecture.equals("34")){
-			prefecture = "広島県";
-		} else if (prefecture.equals("35")){
-			prefecture = "山口県";
-		} else if (prefecture.equals("36")){
-			prefecture = "徳島県";
-		} else if (prefecture.equals("37")){
-			prefecture = "香川県";
-		} else if (prefecture.equals("38")){
-			prefecture = "愛媛県";
-		} else if (prefecture.equals("39")){
-			prefecture = "高知県";
-		} else if (prefecture.equals("40")){
-			prefecture = "福岡県";
-		} else if (prefecture.equals("41")){
-			prefecture = "佐賀県";
-		} else if (prefecture.equals("42")){
-			prefecture = "長崎県";
-		} else if (prefecture.equals("43")){
-			prefecture = "熊本県";
-		} else if (prefecture.equals("44")){
-			prefecture = "大分県";
-		} else if (prefecture.equals("45")){
-			prefecture = "宮崎県";
-		} else if (prefecture.equals("46")){
-			prefecture = "鹿児島県";
-		} else if (prefecture.equals("47")){
-			prefecture = "沖縄県";
-		}
+//		/**
+//		 * 都道府県
+//		 */
+//		if (prefecture.equals("1") ) {
+//			prefecture = "北海道";
+//		} else if (prefecture.equals("2")){
+//			prefecture = "青森県";
+//		} else if (prefecture.equals("3")){
+//			prefecture = "岩手県";
+//		} else if (prefecture.equals("4")){
+//			prefecture = "宮城県";
+//		} else if (prefecture.equals("5")){
+//			prefecture = "秋田県";
+//		} else if (prefecture.equals("6")){
+//			prefecture = "山形県";
+//		} else if (prefecture.equals("7")){
+//			prefecture = "福島県";
+//		} else if (prefecture.equals("8")){
+//			prefecture = "茨城県";
+//		} else if (prefecture.equals("9")){
+//			prefecture = "栃木県";
+//		} else if (prefecture.equals("10")){
+//			prefecture = "群馬県";
+//		} else if (prefecture.equals("11")){
+//			prefecture = "埼玉県";
+//		} else if (prefecture.equals("12")){
+//			prefecture = "千葉県";
+//		} else if (prefecture.equals("13")){
+//			prefecture = "東京都";
+//		} else if (prefecture.equals("14")){
+//			prefecture = "神奈川県";
+//		} else if (prefecture.equals("15")){
+//			prefecture = "新潟県";
+//		} else if (prefecture.equals("16")){
+//			prefecture = "富山県";
+//		} else if (prefecture.equals("17")){
+//			prefecture = "石川県";
+//		} else if (prefecture.equals("18")){
+//			prefecture = "福井県";
+//		} else if (prefecture.equals("19")){
+//			prefecture = "山梨県";
+//		} else if (prefecture.equals("20")){
+//			prefecture = "長野県";
+//		} else if (prefecture.equals("21")){
+//			prefecture = "岐阜県";
+//		} else if (prefecture.equals("22")){
+//			prefecture = "静岡県";
+//		} else if (prefecture.equals("23")){
+//			prefecture = "愛知県";
+//		} else if (prefecture.equals("24")){
+//			prefecture = "三重県";
+//		} else if (prefecture.equals("25")){
+//			prefecture = "滋賀県";
+//		} else if (prefecture.equals("26")){
+//			prefecture = "京都府";
+//		} else if (prefecture.equals("27")){
+//			prefecture = "大阪府";
+//		} else if (prefecture.equals("28")){
+//			prefecture = "兵庫県";
+//		} else if (prefecture.equals("29")){
+//			prefecture = "奈良県";
+//		} else if (prefecture.equals("30")){
+//			prefecture = "和歌山県";
+//		} else if (prefecture.equals("31")){
+//			prefecture = "鳥取県";
+//		} else if (prefecture.equals("32")){
+//			prefecture = "島根県";
+//		} else if (prefecture.equals("33")){
+//			prefecture = "岡山県";
+//		} else if (prefecture.equals("34")){
+//			prefecture = "広島県";
+//		} else if (prefecture.equals("35")){
+//			prefecture = "山口県";
+//		} else if (prefecture.equals("36")){
+//			prefecture = "徳島県";
+//		} else if (prefecture.equals("37")){
+//			prefecture = "香川県";
+//		} else if (prefecture.equals("38")){
+//			prefecture = "愛媛県";
+//		} else if (prefecture.equals("39")){
+//			prefecture = "高知県";
+//		} else if (prefecture.equals("40")){
+//			prefecture = "福岡県";
+//		} else if (prefecture.equals("41")){
+//			prefecture = "佐賀県";
+//		} else if (prefecture.equals("42")){
+//			prefecture = "長崎県";
+//		} else if (prefecture.equals("43")){
+//			prefecture = "熊本県";
+//		} else if (prefecture.equals("44")){
+//			prefecture = "大分県";
+//		} else if (prefecture.equals("45")){
+//			prefecture = "宮崎県";
+//		} else if (prefecture.equals("46")){
+//			prefecture = "鹿児島県";
+//		} else if (prefecture.equals("47")){
+//			prefecture = "沖縄県";
+//		}
 
 
 

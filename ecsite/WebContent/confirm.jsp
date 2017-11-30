@@ -15,7 +15,7 @@
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<title>BuyItemConfirm画面</title>
+	<title>購入確認画面</title>
 	<style type="text/css">
 	/* ========TAG LAYOUT======== */
 		body {
@@ -34,31 +34,53 @@
 			margin:0 auto;
 		}
 
-	/* ========ID LAYOUT======== */
+		/* ========ID LAYOUT======== */
 		#top {
 		   width:780px;
-		   margin:30px auto;
-		   border:1px solid #333;
+		   margin:72px auto;
+
+		   font-size: 13px;
 		}
 
 		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: #8c2121;
+		   font-size: large;
+			font-family: cursive;
+			width: 100%;
+			height: 100px;
+			background-color: #8c2121;
+			color: #FFFFFF;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			letter-spacing: 28px;
+    		font-size: 28px;
+    		font-family: monospace;
 		}
 
 		#main {
 		   width: 100%;
-		   height: 472px;
+		   height: 430px;
 		   text-align: center;
 		}
 
 		#footer {
 			width: 100%;
-			height: 80px;
+			height: 60px;
 			background-color: #8c2121;
 			clear:both;
 		}
+
+		.user{
+			font-weight: 900;
+   			font-size: 14px;
+		}
+
+
+		.henko {
+			font-weight: 600;
+	    	font-size: 14px;
+		}
+
 	</style>
 	<script type="text/javascript">
 		function submitAction(url) {
@@ -70,18 +92,19 @@
 <body>
 	<div id="header">
 	 	<div id="pr">
+	 		<p>購入最終確認画面</p>
 		</div>
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>購入最終確認画面</p>
+
 		</div>
 		<div>
 			<s:form>
 
 				<tr>
 					<td>
-						<label>氏名：</label>
+						<label><span class="user">氏名：</span></label>
 					</td>
 					<td>
 						<s:property value="#session.userName" />
@@ -89,7 +112,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>お届け先：</label>
+						<label><span class="user">お届け先：</span></label>
 					</td>
 					<td>
 						<s:property value="#session.address" />
@@ -102,7 +125,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>商品名：</label>
+						<label><span class="user">商品名：</span></label>
 					</td>
 					<td>
 						<s:property value="itemName" />
@@ -111,7 +134,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>値段：</label>
+						<label><span class="user">値段：</span></label>
 					</td>
 					<td>
 						<s:property value="#session.price" /><span>円</span>
@@ -119,22 +142,29 @@
 				</tr>
 				<tr>
 					<td>
-						<label>購入個数：</label>
+						<label><span class="user">購入個数：</span></label>
 					</td>
 					<td>
 						<s:property value="#session.count" /><span>個</span>
 					</td>
 				</tr>
-
 				<tr>
-					<td>支払い方法：</td>
+					<td>
+						<label><span class="user">送料：</span></label>
+					</td>
+					<td>
+						<span>420円</span>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="user">支払い方法：</span></td>
 					<td>
 						<s:property value="payment" />
 						<input type="hidden" name="payment" value='<s:property value="payment" />' />
 					</td>
 				</tr>
 				<tr>
-					<td>お届け方法：</td>
+					<td><span class="user">お届け方法：</span></td>
 					<td>
 						<s:property value="transport" />
 						<input type="hidden" name="transport" value='<s:property value="transport" />' />
@@ -142,7 +172,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>合計金額：</label>
+						<label><span class="user">合計金額：</span></label>
 					</td>
 					<td>
 						<s:property value="#session.amount" /><span>円</span>
@@ -156,7 +186,7 @@
 
 
 				<tr>
-					<td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
+					<td><input type="button" value="戻る" onclick="submitAction('GoMyPageAction')" /></td>
 					<td><input type="button" value="完了" onclick="submitAction('ConfirmAction')" /></td>
 				</tr>
 			</s:form>

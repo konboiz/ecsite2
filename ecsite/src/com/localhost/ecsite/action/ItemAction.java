@@ -71,7 +71,7 @@ public class ItemAction extends ActionSupport implements SessionAware {
         	int intCount = Integer.parseInt(session.get("count").toString());
         	int intPrice = Integer.parseInt(session.get("price").toString());
 
-        	session.put("amount", intCount * intPrice);
+        	session.put("amount", intCount * intPrice +420);
 
 
 

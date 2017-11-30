@@ -15,18 +15,18 @@ public class UpdatePasswordComplateDAO {
 
 		 DBConnector dbConnector = new DBConnector();
 
-		 Connection connection = dbConnector.getConnection();
+		 Connection con = dbConnector.getConnection();
 
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, password);
-			preparedStatement.setString(2, user_id);
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, password);
+			ps.setString(2, user_id);
+			ps.execute();
 
-			preparedStatement.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			connection.close();
+			con.close();
 		}
 	}
 

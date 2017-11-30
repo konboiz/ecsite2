@@ -47,28 +47,26 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 public String execute() throws  SQLException {
 
-	//強制ログイン中
-	String result = ERROR;
 
-	result = SUCCESS;
-	userId = "1111";
-	password = "1111";
-	userName = "てすとてすと";
-	tel = "1111111111";
-	loginDTO.setUserId(userId);
-	loginDTO.setUserName(userName);
-	loginDTO.setPassword(password);
-	loginDTO.setTel(tel);
-	session.put("userId", "1111");
-	session.put("userName", "てすとてすと");
-	session.put("address", "11111111testest");
-	session.put("tel", "1111111111");
+	String result = ERROR;
+//
+//	//強制ログイン中
+//	result = SUCCESS;
+//	userId = "1111";
+//	password = "1111";
+//	userName = "てすとてすと";
+//	tel = "1111111111";
+//	loginDTO.setUserId(userId);
+//	loginDTO.setUserName(userName);
+//	loginDTO.setPassword(password);
+//	loginDTO.setTel(tel);
+//	session.put("userId", "1111");
+//	session.put("userName", "てすとてすと");
+//	session.put("address", "11111111testest");
+//	session.put("tel", "1111111111");
 
 	// ログイン実行
 
-			/**
-			 * DAO DTOから情報引き出しを再確認
-			 */
 
 			loginDTO = loginDAO.getUserInfo( userId, password, userName );
 
@@ -76,7 +74,7 @@ public String execute() throws  SQLException {
 				if(password.equals(loginDTO.getPassword())){
 					if(userName.equals(loginDTO.getUserName())){
 
-						// アイテム情報を取得
+						// ユーザー情報を取得
 
 						session.put("userId", loginDTO.getUserId());
 						session.put("userName", loginDTO.getUserName());

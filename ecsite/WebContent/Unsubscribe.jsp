@@ -35,9 +35,12 @@
 
 	/* ========ID LAYOUT======== */
 		#top {
-		   width:780px;
+		  width:780px;
 		   margin:30px auto;
 		   border:1px solid #333;
+		   font-size: 13px;
+		   background-color:white;
+		   font-weight:900;
 		}
 
 		#header {
@@ -57,6 +60,11 @@
 			height: 80px;
 			background-color: #8c2121;
 			clear:both;
+		}
+
+		.user{
+			font-weight: 900;
+   			font-size: 14px;
 		}
 	</style>
 	<script type="text/javascript">
@@ -79,8 +87,8 @@
 		<table>
 				<tr>
 					<td>
-						<p>本当に退会で宜しいでしょうか</p>
-						<p>退会する方は「退会」ボタンを押してください。</p>
+						<p><span class="user">本当に退会で宜しいでしょうか</span></p>
+						<p><span class="user">退会する方は「退会」ボタンを押してください。</span></p>
 					</td>
 				</tr>
 				<tr>

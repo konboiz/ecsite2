@@ -35,6 +35,8 @@ table {
 	border: 1px solid #333;
 	font-size: medium;
 	font-weight: 900;
+	letter-spacing: 10px;
+	background-color:white;
 }
 
 #header {
@@ -65,36 +67,73 @@ table {
 	text-align: center;
 	font-size: medium;
 }
+
+.user{
+	font-weight: 900;
+    font-size: 15px;
+}
+
+.log {
+	font-weight: 900;
+    font-size: 20px;
+    color: red;
+}
+
+.kotira {
+font-size: 18px;
+}
+
+.henko {
+	font-weight: 600;
+    font-size: 14px;
+
+}
+
+.sweets{
+	font-size: 23px;
+    font-family: cursive;
+    width: 100%;
+    height: 85px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 13px;
+    font-family: unset;
+    letter-spacing: 10px;
+}
 </style>
 </head>
 <body>
 	<div id="header">
-		<div id="pr"></div>
+		<div id="pr">
+			<span class="sweets">MYSWEETS</span>
+		</div>
 	</div>
 	<div id="main">
 		<div id="top">
 			<p>ログイン画面</p>
 		</div>
 		<div id="log">
-			<p>下記を入力してログインをお願いします　↓　↓　↓</p>
+			<p>下記を入力して<span class="log">ログイン</span>をお願いします　↓　↓　↓</p>
 		</div>
 	<s:form action="LoginAction">
 		<table >
 			<tr>
 				<td>
-					<label>ユーザー名：</label>
+					<label><span class="user">ユーザー名：</span></label>
 					<s:textfield name="userName" escape="false" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label>ユーザーID：</label>
+					<label><span class="user">ユーザーID：</span></label>
 					<s:textfield name="userId" escape="false" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<label>パスワード：</label>
+					<label><span class="user">パスワード：</span></label>
 					<s:password name="password" escape="false" />
 				</td>
 			</tr>
@@ -105,10 +144,10 @@ table {
 	</s:form>
 	<div id="text-link">
 		<p>
-			新規ユーザー登録は<a href='<s:url action="GoUserCreateAction" />'>こちら</a>
+			<span class="henko">新規ユーザー登録</span>は<a href='<s:url action="GoUserCreateAction" />'><span class="kotira">こちら</span></a>
 		</p>
 		<p>
-			Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+			<span class="henko">Home</span>へ戻る場合は<a href='<s:url action="GoHomeAction" />'><span class="kotira">こちら</span></a>
 		</p>
 	</div>
 </div>

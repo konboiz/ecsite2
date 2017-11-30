@@ -60,8 +60,16 @@ table {
 #footer {
 	width: 100%;
 	height: 80px;
-	background-color: #8c2121;
 	clear: both;
+	font-size: 21px;
+    font-family: sans-serif;
+    background-color: #630e0e;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 13px;
+
 }
 
 #text-center {
@@ -150,7 +158,7 @@ table {
 						<select name="payment">
 							<option value="1" selected="selected">クレジットカード</option>
 							<option value="2">コンビニ払い・電子マネー</option>
-							<option value="3">代引き ＋324円</option>
+							<option value="3">代引き</option>
 							<option value="4">現金</option>
 						</select>
 					</td>
@@ -176,7 +184,9 @@ table {
 			</table>
 		</s:form>
 	</s:iterator>
-
+<div id="footer">
+<a href='<s:url action="GoMyPageAction" />'>マイページ</a><span>へ戻る</span>
+</div>
 
 </body>
 </html>

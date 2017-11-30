@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>MyPage画面</title>
+	<title>購入履歴</title>
 	<style type="text/css">
 	/* ========TAG LAYOUT======== */
 		body {
@@ -30,6 +30,7 @@
 		table {
 			text-align:center;
 			margin:0 auto;
+			background-color: white;
 		}
 
 	/* ========ID LAYOUT======== */
@@ -37,6 +38,10 @@
 		   width:780px;
 		   margin:30px auto;
 		   border:1px solid #333;
+		   font-size: 20px;
+   			font-weight: 900;
+			letter-spacing: 44px;
+			background-color:white;
 		}
 
 		#header {
@@ -47,7 +52,6 @@
 
 		#main {
 		   width: 100%;
-		   height: 472px;
 		   text-align: center;
 		}
 
@@ -62,11 +66,32 @@
 			display: inline-block;
 			text-align: right;
 		}
+
+		.henko {
+			font-weight: 600;
+		    font-size: 14px;
+		}
+
+		.sweets{
+			font-size: 23px;
+    		font-family: cursive;
+    		width: 100%;
+		    height: 85px;
+		    color: #FFFFFF;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    letter-spacing: 13px;
+		    font-family: unset;
+		    letter-spacing: 10px;
+		}
+
 	</style>
 </head>
 <body>
 	<div id="header">
 	 	<div id="pr">
+	 	<span class="sweets">MYSWEETS</span>
 		</div>
 	</div>
 	<div id="main">
@@ -80,7 +105,7 @@
 		<s:elseif test="message == null">
 			<h3>ご購入情報は以下になります。</h3>
 			<table border="1">
-			<tr>
+			<tr style="background-color:gold;">
 				<th>商品名</th>
 				<th>値段</th>
 				<th>購入個数</th>
@@ -106,8 +131,7 @@
 			<h3><s:property value="message"/></h3>
 		</s:if>
 			<div id="text-right">
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-				<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+				<p><span class="henko">マイページ</span>へ戻る場合は<a href='<s:url action="GoMyPageAction" />'>こちら</a></p>
 			</div>
 		</div>
 	</div>

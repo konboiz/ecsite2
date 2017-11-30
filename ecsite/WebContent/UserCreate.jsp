@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>UserCreate画面</title>
+	<title>ユーザー登録画面</title>
 	<style type="text/css">
 		/* ========TAG LAYOUT======== */
 		body {
@@ -37,6 +37,9 @@
 		   width:780px;
 		   margin:30px auto;
 		   border:1px solid #333;
+		   font-size: 13px;
+		   background-color:white;
+		   font-weight:900;
 		}
 
 		#header {
@@ -49,6 +52,9 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			letter-spacing: 28px;
+    		font-size: 28px;
+    		font-family: monospace;
 		}
 
 		#main {
@@ -59,12 +65,21 @@
 
 		#footer {
 			width: 100%;
-			height: 80px;
+			height: 60px;
 			background-color: #8c2121;
 			clear:both;
 		}
 
+		.user{
+			font-weight: 900;
+   			font-size: 14px;
+		}
 
+
+		.henko {
+			font-weight: 600;
+	    	font-size: 14px;
+		}
 
 	</style>
 </head>
@@ -86,7 +101,7 @@
 			<s:form action="UserCreateAction">
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　ユーザーID：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">ユーザーID：</span></label>
 					</td>
 					<td>
 						<input type="text" name="userId" value="" />
@@ -94,7 +109,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　パスワード：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">パスワード：</span></label>
 					</td>
 					<td>
 						<input type="text" name="password" value="" />
@@ -102,7 +117,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　氏名(ユーザー名)：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">氏名(ユーザー名)：</span></label>
 					</td>
 					<td>
 						<input type="text" name="first_name" value="" />
@@ -113,7 +128,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　性別</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">性別</span></label>
 					</td>
 					<td>
 						<input type="checkbox" name="gender" value="0" checked="checked" /> 男
@@ -122,7 +137,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　郵便番号：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">郵便番号：</span></label>
 					</td>
 					<td>
 					<!--pc=postal code(郵便番号)の略-->
@@ -135,65 +150,65 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　 都道府県：</label>
+						<label>　　　　　　　　　　　　　　　　 <span class="user">都道府県：</span></label>
 					</td>
 					<td>
 					<select name="prefecture">
 								 <option value="select" selected>都道府県を選択</option>
-								 <option value="1">北海道</option>
-								 <option value="2">青森県</option>
-								 <option value="3">岩手県</option>
-								 <option value="4">宮城県</option>
-								 <option value="5">秋田県</option>
-								 <option value="6">山形県</option>
-								 <option value="7">福島県</option>
-								 <option value="8">茨城県</option>
-								 <option value="9">栃木県</option>
-								 <option value="10">群馬県</option>
-								 <option value="11">埼玉県</option>
-								 <option value="12">千葉県</option>
-								 <option value="13">東京都</option>
-								 <option value="14">神奈川県</option>
-								 <option value="15">新潟県</option>
-								 <option value="16">富山県</option>
-								 <option value="17">石川県</option>
-								 <option value="18">福井県</option>
-								 <option value="19">山梨県</option>
-								 <option value="20">長野県</option>
-								 <option value="21">岐阜県</option>
-								 <option value="22">静岡県</option>
-								 <option value="23">愛知県</option>
-								 <option value="24">三重県</option>
-								 <option value="25">滋賀県</option>
-								 <option value="26">京都府</option>
-								 <option value="27">大阪府</option>
-								 <option value="28">兵庫県</option>
-								 <option value="29">奈良県</option>
-								 <option value="30">和歌山県</option>
-								 <option value="31">鳥取県</option>
-								 <option value="32">島根県</option>
-								 <option value="33">岡山県</option>
-								 <option value="34">広島県</option>
-								 <option value="35">山口県</option>
-								 <option value="36">徳島県</option>
-								 <option value="37">香川県</option>
-								 <option value="38">愛媛県</option>
-								 <option value="39">高知県</option>
-								 <option value="40">福岡県</option>
-								 <option value="41">佐賀県</option>
-								 <option value="42">長崎県</option>
-								 <option value="43">熊本県</option>
-								 <option value="44">大分県</option>
-								 <option value="45">宮崎県</option>
-								 <option value="46">鹿児島県</option>
-								 <option value="47">沖縄県</option>
+								 <option value="北海道">北海道</option>
+								 <option value="青森県">青森県</option>
+								 <option value="岩手県">岩手県</option>
+								 <option value="宮城県">宮城県</option>
+								 <option value="秋田県">秋田県</option>
+								 <option value="山形県">山形県</option>
+								 <option value="福島県">福島県</option>
+								 <option value="茨城県">茨城県</option>
+								 <option value="栃木県">栃木県</option>
+								 <option value="群馬県">群馬県</option>
+								 <option value="埼玉県">埼玉県</option>
+								 <option value="千葉県">千葉県</option>
+								 <option value="東京都">東京都</option>
+								 <option value="神奈川県">神奈川県</option>
+								 <option value="新潟県">新潟県</option>
+								 <option value="富山県">富山県</option>
+								 <option value="石川県">石川県</option>
+								 <option value="福井県">福井県</option>
+								 <option value="山梨県">山梨県</option>
+								 <option value="長野県">長野県</option>
+								 <option value="岐阜県">岐阜県</option>
+								 <option value="静岡県">静岡県</option>
+								 <option value="愛知県">愛知県</option>
+								 <option value="三重県">三重県</option>
+								 <option value="滋賀県">滋賀県</option>
+								 <option value="京都府">京都府</option>
+								 <option value="大阪府">大阪府</option>
+								 <option value="兵庫県">兵庫県</option>
+								 <option value="奈良県">奈良県</option>
+								 <option value="和歌山県">和歌山県</option>
+								 <option value="鳥取県">鳥取県</option>
+								 <option value="島根県">島根県</option>
+								 <option value="岡山県">岡山県</option>
+								 <option value="広島県">広島県</option>
+								 <option value="山口県">山口県</option>
+								 <option value="徳島県">徳島県</option>
+								 <option value="香川県">香川県</option>
+								 <option value="愛媛県">愛媛県</option>
+								 <option value="高知県">高知県</option>
+								 <option value="福岡県">福岡県</option>
+								 <option value="佐賀県">佐賀県</option>
+								 <option value="長崎県">長崎県</option>
+								 <option value="熊本県">熊本県</option>
+								 <option value="大分県">大分県</option>
+								 <option value="宮崎県">宮崎県</option>
+								 <option value="鹿児島県">鹿児島県</option>
+								 <option value="沖縄県">沖縄県</option>
 						</select>
 
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　市町村区：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">市町村区：</span></label>
 					</td>
 					<td>
 						<input type="text" name="city" value="" />
@@ -201,7 +216,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>	　　　　　　　　　　　　　　　　町・番地：</label>
+						<label>	　　　　　　　　　　　　　　　　<span class="user">町・番地：</span></label>
 					</td>
 					<td>
 						<input type="text" name="banchi" value="" />
@@ -209,7 +224,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　建物名：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">建物名：</span></label>
 					</td>
 					<td>
 						<input type="text"  name="building_name" value="" />
@@ -217,7 +232,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　会社名：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">会社名：</span></label>
 					</td>
 					<td>
 						<input type="text" name="company" value="" />
@@ -225,7 +240,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　電話番号：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">電話番号：</span></label>
 					</td>
 					<td>
 						<input type="text" name="tel_1" value="" />
@@ -239,7 +254,7 @@
 				</tr>
 				<tr>
 					<td>
-						<label>　　　　　　　　　　　　　　　　E-メール：</label>
+						<label>　　　　　　　　　　　　　　　　<span class="user">E-メール：</span></label>
 					</td>
 					<td>
 						<input type="text" name="email" value="" />
@@ -254,7 +269,7 @@
 			</s:form>
 			</table>
 			<div>
-				<span>マイページに戻る場合は</span><a href='<s:url action="GoMyPageAction" />'>こちら</a>
+				<span class="henko">ホーム</span>に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
 			</div>
 		</div>
 	</div>

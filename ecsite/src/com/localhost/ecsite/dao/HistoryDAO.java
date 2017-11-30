@@ -15,32 +15,33 @@ public class HistoryDAO {
 
 		 DBConnector dbConnector = new DBConnector();
 
-		 Connection connection = dbConnector.getConnection();
+		 Connection con = dbConnector.getConnection();
 
 		ArrayList<HistoryDTO> historyDTO = new ArrayList<HistoryDTO>();
 		String sql = "select * from buy_info where user_id = ? ";
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, user_id);
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, user_id);
 
-			ResultSet resultSet = preparedStatement.executeQuery();
+			ResultSet rs = ps.executeQuery();
 
-			while(resultSet.next()) {
+			while(rs.next()) {
 				HistoryDTO dto = new HistoryDTO();
 
-				dto.setItemName(resultSet.getString("item_name"));
-				dto.setAmount(resultSet.getInt("amount"));
-				dto.setCount(resultSet.getInt("count"));
-				dto.setPayment(resultSet.getString("payment"));
-				dto.setInsert_date(resultSet.getString("insert_date"));
+				dto.setItemName(rs.getString("item_name"));
+				dto.setAmount(rs.getInt("amount"));
+				dto.setCount(rs.getInt("count"));
+				dto.setPayment(rs.getString("payment"));
+				dto.setInsert_date(rs.getString("insert_date"));
 
 				historyDTO.add(dto);
 			}
 
 		} catch(Exception e) {
 			e.printStackTrace();
+
 		} finally {
-			connection.close();
+			con.close();
 		}
 
 		return historyDTO;
@@ -51,24 +52,25 @@ public class HistoryDAO {
 
 		 DBConnector dbConnector = new DBConnector();
 
-		 Connection connection = dbConnector.getConnection();
+		 Connection con = dbConnector.getConnection();
 
 
 		String sql = "DELETE FROM item_info where item_id  = ? AND item_name  = ?";
 
-		PreparedStatement preparedStatement;
+		PreparedStatement ps;
 		int result =0;
 		try {
-			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setString(1, item_id);
-			preparedStatement.setString(2, item_name);
+			ps = con.prepareStatement(sql);
+			ps.setString(1, item_id);
+			ps.setString(2, item_name);
 
-			result = preparedStatement.executeUpdate();
+			result = ps.executeUpdate();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+
 		} finally {
-			connection.close();
+			con.close();
 		}
 
 		return result;

@@ -14,9 +14,9 @@
 	<meta name="keywords" content="" />
 	<link rel="stylesheet" href="./css/body.css">
 	<link rel="stylesheet" href="./css/animate.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+	<link rel="stylesheet" href="./css/jquery.bxslider.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+	<script src="./js/jquery.bxslider.js"></script>
 
 
 	<script>
@@ -25,7 +25,7 @@
 		  var timer = setInterval(slideshow, 3000);
 
 		  function slideshow() {
-		    $('img:first').fadeOut('fast', function() {
+		    $('#frame img:first').fadeOut('fast', function() {
 		      $(this).next('img').fadeIn();
 		      // 最後尾に移動
 		      $('#frame').append(this);
@@ -33,6 +33,54 @@
 		  }
 
 		  $('#frame img').hover(
+		    function () {
+		      // スライドショーを中止
+		      clearInterval(timer);
+		    },
+		    function () {
+		      // スライドショーを再開
+		      timer = setInterval(slideshow, 3000);
+		    }
+		  );
+		});
+
+	$(function () {
+		  // スライドショー（3秒で切り替え）
+		  var timer = setInterval(slideshow, 3000);
+
+		  function slideshow() {
+		    $('#frame2 img:first').fadeOut('fast', function() {
+		      $(this).next('img').fadeIn();
+		      // 最後尾に移動
+		      $('#frame2').append(this);
+		    });
+		  }
+
+		  $('#frame2 img').hover(
+		    function () {
+		      // スライドショーを中止
+		      clearInterval(timer);
+		    },
+		    function () {
+		      // スライドショーを再開
+		      timer = setInterval(slideshow, 3000);
+		    }
+		  );
+		});
+
+	$(function () {
+		  // スライドショー（3秒で切り替え）
+		  var timer = setInterval(slideshow, 3000);
+
+		  function slideshow() {
+		    $('#frame3 img:first').fadeOut('fast', function() {
+		      $(this).next('img').fadeIn();
+		      // 最後尾に移動
+		      $('#frame3').append(this);
+		    });
+		  }
+
+		  $('#frame3 img').hover(
 		    function () {
 		      // スライドショーを中止
 		      clearInterval(timer);
@@ -88,6 +136,17 @@ table {
 	clear: both;
 }
 
+#slider {
+		width: 100%;
+		height: 200px;
+		 display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	letter-spacing: 13px;
+    	font-family: unset;
+		text-align:center;
+}
+
 #text-center {
 	display: inline-block;
 	text-align: center;
@@ -99,11 +158,56 @@ table {
   height: 200px;
   max-width: 100%;
   max-heght: 100%;
+  float:left;
+  margin-left:-30px;
+
 }
 
 #frame img:first-child  {
   display: inline;
 }
+
+#frame2 img {
+  display: none;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  max-heght: 100%;
+  float:left;
+
+}
+
+#frame2 img:first-child  {
+  display: inline;
+}
+
+
+#frame3 img {
+  display: none;
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  max-heght: 100%;
+  float:left;
+  margin-left:30px;
+
+}
+
+#frame3 img:first-child  {
+  display: inline;
+}
+
+.user{
+			font-weight: 900;
+   			font-size: 14px;
+		}
+
+.sweets{
+	font-size: 24px;
+    font-family: cursive;
+
+}
+
 </style>
 </head>
 <body>
@@ -115,42 +219,40 @@ table {
 	<div id="main">
 
 		<div id="top">
-			<p><s:property value="userName" escape="false"/>さん </p>
-			<p>ログインありがとうございます！</p>
+			<p><span class="user"><s:property value="#session.userName" escape="false"/></span>さん </p>
+			<p>ようこそ  <span class ="sweets"> My SWEETS </span> へ</p>
 		</div>
 			<div>
 			<table>
 				<tr>
-					<td>商品の購入へは </td>
+					<td><span class="user">商品の購入へは　→</span></td>
 					<td> <a href='<s:url action="MyPageAction" />'>商品購入</a></td>
 				</tr>
 					<tr>
-						<td>過去の商品の購入履歴は</td>
+						<td><span class="user">過去の商品の購入履歴は　→</span></td>
 						<td> <a href='<s:url action="HistoryAction" />'>商品履歴</a></td>
 					</tr>
 					<tr>
-						<td>ログアウトの場合は</td>
+						<td><span class="user">ログアウトの場合は　→</span></td>
 						<td>
 							 <a href='<s:url action="LogoutAction" />'> ログアウト</a>
 						</td>
 					</tr>
 
 				</table>
-
-
 				<table>
 					<tr>
-						<td>パスワードを変更する場合は</td>
+						<td><span class="user">パスワードを変更する場合は　→</span></td>
 						<td><a href='<s:url action="UpdatePasswordAction" />'>パスワード変更</a></td>
 					</tr>
 				</table>
 				<table>
 					<tr>
-						<td>退会する場合は</td>
+						<td><span class="user">退会する場合は　→</span></td>
 						<td><a href='<s:url action="UnsubscribeAction" />'>退会</a></td>
 					</tr>
 				</table>
-
+	<div id="slider">
 				<div id="frame">
 						<img src="./img/cake001.jpg">
 						<img src="./img/cake002.jpg">
@@ -158,6 +260,9 @@ table {
 						<img src="./img/cake053.jpg">
 						<img src="./img/cake091.jpg">
 						<img src="./img/cake100.jpg">
+				</div>
+
+				<div id="frame2">
 						<img src="./img/cake102.jpg">
 						<img src="./img/cake104.jpg">
 						<img src="./img/cake124.jpg">
@@ -165,6 +270,9 @@ table {
 						<img src="./img/cake135.jpg">
 						<img src="./img/cake138.jpg">
 						<img src="./img/cake158.jpg">
+				</div>
+
+				<div id="frame3">
 						<img src="./img/cake159.jpg">
 						<img src="./img/cake162.jpg">
 						<img src="./img/cake163.jpg">
@@ -173,6 +281,7 @@ table {
 						<img src="./img/cake184.jpg">
 				</div>
 
+	</div>
 	</div>
 	</div>
 

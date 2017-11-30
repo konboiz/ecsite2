@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>UserCreateComplate画面</title>
+	<title>ユーザー情報登録完了画面</title>
 	<style type="text/css">
 		/* ========TAG LAYOUT======== */
 		body {
@@ -36,7 +36,10 @@
 		#top {
 		   width:780px;
 		   margin:30px auto;
-		   border:1px solid #333;
+			font-size: 31px;
+   			font-weight: bold;
+    		letter-spacing: 20px;
+    		color: red;
 		}
 
 		#header {

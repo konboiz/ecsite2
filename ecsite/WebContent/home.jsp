@@ -54,6 +54,7 @@ table {
     justify-content: center;
     letter-spacing: 13px;
     font-family: unset;
+    letter-spacing: 10px;
 }
 
 #main {
@@ -111,14 +112,24 @@ table {
 	justify-content: center;
 	border: 1px solid #333;
 }
+
+.sweets{
+	font-size: 23px;
+    font-family: cursive;
+
+}
+
+.login{
+font-size: 22px;
+}
 </style>
 	</head>
 	<body >
 
 		<div id="header">
-			<div id="">
-			<p>ようこそ！ My SWEETSへ!!</p>
-				<p>購入はログインをお願いします!!!!</p>
+			<div class="my">
+			<p>ようこそ！ <span class ="sweets">My SWEETS</span>へ!!</p>
+				<p>　　　　　購入へは<span class  ="login">ログイン</span>をお願いします!!!!</p>
 			</div>
 		</div>
 

@@ -17,10 +17,10 @@ public class UserCreateConfirmDAO {
 
 		 DBConnector dbConnector = new DBConnector();
 
-		 Connection connection = dbConnector.getConnection();
+		 Connection con = dbConnector.getConnection();
 
 		try {
-			PreparedStatement ps = connection.prepareStatement(sql);
+			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setString(1, userId);
 			ps.setString(2, password);
 			ps.setString(3, userName);
@@ -37,7 +37,7 @@ public class UserCreateConfirmDAO {
 			e.printStackTrace();
 
 		} finally {
-			connection.close();
+			con.close();
 		}
 	}
 

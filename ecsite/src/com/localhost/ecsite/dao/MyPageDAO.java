@@ -15,7 +15,7 @@ public class MyPageDAO {
 
     	DBConnector dbConnector = new DBConnector();
 
-        Connection connection = dbConnector.getConnection();
+        Connection con = dbConnector.getConnection();
 
 
     ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>() ;
@@ -24,7 +24,7 @@ public class MyPageDAO {
 		String sql = "SELECT * FROM item_info";
 
 		try {
-			PreparedStatement ps = connection.prepareStatement(sql);
+			PreparedStatement ps = con.prepareStatement(sql);
 
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
@@ -48,7 +48,7 @@ public class MyPageDAO {
 			e.printStackTrace();
 
 		} finally {
-			connection.close();
+			con.close();
 
 		}
 

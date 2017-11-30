@@ -16,7 +16,7 @@
 <meta charset="utf-8">
 <script
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<title>BuyItemConfirm画面</title>
+<title>パスワード変更画面</title>
 <style type="text/css">
 /* ========TAG LAYOUT======== */
 body {
@@ -37,15 +37,19 @@ table {
 
 /* ========ID LAYOUT======== */
 #top {
-	width: 780px;
+	width: 540px;
 	margin: 30px auto;
-	border: 1px solid #333;
+	font-size: 18px;
+   	font-weight: bold;
+    letter-spacing: 16px;
 }
 
 #header {
 	width: 100%;
-	height: 80px;
+	height: 100px;
 	background-color: #8c2121;
+	font-size: 40px;
+    font-weight: 900;
 }
 
 #main {
@@ -56,9 +60,30 @@ table {
 
 #footer {
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	background-color: #8c2121;
 	clear: both;
+}
+.pass {
+	font-size: 23px;
+    font-family: cursive;
+    width: 100%;
+    height: 100px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 13px;
+    font-family: unset;
+}
+
+#home{
+	font-size: 18px;
+}
+
+.user{
+	font-weight: 900;
+   	font-size: 14px;
 }
 </style>
 <script type="text/javascript">
@@ -69,14 +94,18 @@ table {
 	</script>
 </head>
 <body>
-	<div class="header">
-		<div class="top">
-			<p>新しいパスワードの入力は下記へ入力をお願い致します。。</p>
+	<div id="header">
+		<div class="pass">
+			<p>パスワード変更</p>
 		</div>
+
 	</div>
 
-	<div class="main">
+	<div id="main">
 
+	<div id="top">
+			<p>新しいパスワードの入力は下記へ入力をお願い致します。　</p>
+		</div>
 		<s:if test="errorMessage!=''">
 			<div class="er">
 				<s:property value="errorMessage" escape="false" />
@@ -88,30 +117,35 @@ table {
 			<table>
 
 				<tr>
-					<td><label>ユーザーID</label></td>
+					<td><label><span class="user">ユーザーID：</span></label></td>
 					<td><input type="text" name="userId" value="" /></td>
 				</tr>
 
 
 				<tr>
-					<td><label>新しいパスワード</label></td>
+					<td><label><span class="user">新しいパスワード：</span></label></td>
 					<td><input type="password" name="password_1" value="" /></td>
 				</tr>
 
 				<tr>
-					<td><label>もう一度入力して下さい。</label></td>
+					<td><label><span class="user">もう一度入力して下さい</span></label></td>
 					<td><input type="password" name="password_2" value="" /></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="登録" /></td>
 				</tr>
+
+
 			</table>
+			<div id="home">
+				<a href='<s:url action="GoHomeAction" />' >ホームに戻る</a>
+			</div>
 		</form>
 	</div>
 
 
-	<div class="footer">
-		<a href='<s:url action="GoHomeAction" />' >ホームに戻る</a>
+	<div id="footer">
+
 	</div>
 </body>
 

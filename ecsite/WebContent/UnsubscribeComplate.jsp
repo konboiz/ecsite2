@@ -13,10 +13,10 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>BuyItemComplate画面</title>
+	<title>退会</title>
 	<style type="text/css">
 	/* ========TAG LAYOUT======== */
-		body {
+	body {
 		   margin:0;
 		   padding:0;
 		   line-height:1.6;
@@ -32,11 +32,14 @@
 			margin:0 auto;
 		}
 
-	/* ========ID LAYOUT======== */
+		/* ========ID LAYOUT======== */
 		#top {
 		   width:780px;
 		   margin:30px auto;
-		   border:1px solid #333;
+			font-size: 31px;
+   			font-weight: bold;
+    		letter-spacing: 20px;
+    		color: red;
 		}
 
 		#header {
@@ -57,7 +60,16 @@
 			background-color: #8c2121;
 			clear:both;
 		}
+		.user{
+			font-weight: 900;
+   			font-size: 30px;
+		}
+		.henko {
+			font-weight: 600;
+	    	font-size: 18px;
+		}
 	</style>
+
 </head>
 <body>
 	<div id="header">
@@ -69,10 +81,10 @@
 			<p>退会完了しました。</p>
 		</div>
 		<div>
-			<p>退会完了致しました。</p>
-			<p>今までご利用ありがとうございました。</p>
+
+			<p><span class="user">今までご利用ありがとうございました。</span></p>
 			<div>
-				<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+				<p><span class="henko"><br/>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></span></p>
 			</div>
 		</div>
 	</div>

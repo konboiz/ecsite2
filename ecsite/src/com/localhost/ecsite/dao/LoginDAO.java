@@ -16,13 +16,13 @@ public class LoginDAO {
 
 		DBConnector dbConnector = new DBConnector();
 
-		Connection connection = dbConnector.getConnection();
+		Connection con = dbConnector.getConnection();
 
 
 		String sql = "SELECT * FROM user_info where user_id = ? AND password = ? AND user_name = ?";
 
 		try {
-			PreparedStatement ps = connection.prepareStatement(sql);
+			PreparedStatement ps = con.prepareStatement(sql);
 
 			ps.setString(1, user_id);
 			ps.setString(2, password);
@@ -57,13 +57,13 @@ public class LoginDAO {
 	public LoginDTO userSearch (String user_id ){
 		LoginDTO loginDTO = new LoginDTO();
     	DBConnector dbConnector = new DBConnector();
-    	Connection connection = dbConnector.getConnection();
+    	Connection con = dbConnector.getConnection();
 
 
 		String sql = "SELECT * FROM user_info where user_id = ? ";
 
 		try {
-			PreparedStatement ps = connection.prepareStatement(sql);
+			PreparedStatement ps = con.prepareStatement(sql);
 
 			ps.setString(1, user_id);
 
@@ -83,11 +83,4 @@ public class LoginDAO {
 
 
 	}
-
-
-
-
-
-
-
 

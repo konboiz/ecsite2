@@ -14,7 +14,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>UserCreateConfirm画面</title>
+	<title>登録確認画面</title>
 	<style type="text/css">
 		/* ========TAG LAYOUT======== */
 		body {
@@ -34,16 +34,20 @@
 		}
 
 		/* ========ID LAYOUT======== */
-		#top {
-		   width:780px;
-		   margin:30px auto;
-		   border:1px solid #333;
-		}
 
 		#header {
-		   width: 100%;
-		   height: 80px;
-		   background-color: #8c2121;
+		   font-size: large;
+			font-family: cursive;
+			width: 100%;
+			height: 100px;
+			background-color: #8c2121;
+			color: #FFFFFF;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			letter-spacing: 12px;
+    		font-size: 28px;
+    		font-family: monospace;
 		}
 
 		#main {
@@ -58,28 +62,37 @@
 
 		#footer {
 			width: 100%;
-			height: 80px;
+			height: 76px;
 			background-color: #8c2121;
 			clear:both;
 		}
+
+		.user{
+			font-weight: 900;
+   			font-size: 14px;
+		}
+
+
+
+
 	</style>
 </head>
 <body>
 	<div id="header">
 	 	<div id="pr">
+	 		<p>ユーザー情報の登録確認</p>
 		</div>
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>UserCreateConfirm</p>
-		</div>
+	</div>
 		<div>
 			<h3>登録する内容は以下でよろしいですか。</h3>
 			<table>
 				<s:form action="UserCreateConfirmAction">
 					<tr id="box">
 						<td>
-							<label>ユーザーID:</label>
+							<label><span class="user">ユーザーID：</span></label>
 						</td>
 						<td>
 							<s:property value="userId" escape="false" />
@@ -87,7 +100,7 @@
 					</tr>
 					<tr id="box">
 						<td>
-							<label>パスワード:</label>
+							<label><span class="user">パスワード：</span></label>
 						</td>
 						<td>
 							<s:property value="password" escape="false" />
@@ -95,7 +108,7 @@
 					</tr>
 					<tr id="box">
 						<td>
-							<label>氏名(ユーザー名):</label>
+							<label><span class="user">氏名(ユーザー名)：</span></label>
 						</td>
 						<td>
 							<s:property value="userName" escape="false" />
@@ -103,7 +116,7 @@
 					</tr>
 					<tr>
 						<td>
-							<label>性別</label>
+							<label><span class="user">性別：</span></label>
 						</td>
 						<td>
 							<s:property value="genderStr" escape="false" />
@@ -111,18 +124,15 @@
 					</tr>
 					<tr>
 						<td>
-							<label>郵便番号</label>
+							<label><span class="user">郵便番号：</span></label>
 						</td>
 						<td>
-							<s:property value="pc_1" escape="false" />
-						</td>
-						<td>
-							<s:property value="pc_2" escape="false" />
+							<s:property value="pc" escape="false" />
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<label>都道府県</label>
+							<label><span class="user">都道府県：</span></label>
 						</td>
 						<td>
 							<s:property value="prefecture" escape="false" />
@@ -130,7 +140,7 @@
 					</tr>
 					<tr>
 						<td>
-							<label>市町村区</label>
+							<label><span class="user">市町村区：</span></label>
 						</td>
 						<td>
 							<s:property value="city" escape="false" />
@@ -138,7 +148,7 @@
 					</tr>
 					<tr>
 						<td>
-							<label>町・番地</label>
+							<label><span class="user">町・番地：</span></label>
 						</td>
 						<td>
 							<s:property value="banchi" escape="false" />
@@ -146,7 +156,7 @@
 					</tr>
 					<tr>
 						<td>
-							<label>建物名</label>
+							<label><span class="user">建物名：</span></label>
 						</td>
 						<td>
 							<s:property value="building_name" escape="false" />
@@ -154,7 +164,7 @@
 					</tr>
 					<tr>
 						<td>
-							<label>会社名</label>
+							<label><span class="user">会社名：</span></label>
 						</td>
 						<td>
 							<s:property value="company" escape="false" />
@@ -162,21 +172,16 @@
 					</tr>
 					<tr>
 						<td>
-							<label>電話番号</label>
+							<label><span class="user">電話番号：</span></label>
 						</td>
 						<td>
-							<s:property value="tel_1" escape="false" />
+							<s:property value="tel" escape="false" />
 						</td>
-						<td>
-							<s:property value="tel_2" escape="false" />
-						</td>
-						<td>
-							<s:property value="tel_3" escape="false" />
-						</td>
-					</tr>
+
+
 					<tr>
 						<td>
-							<label>Eメール</label>
+							<label><span class="user">Eメール：</span></label>
 						</td>
 						<td>
 							<s:property value="email" escape="false"/>
