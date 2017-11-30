@@ -3,6 +3,7 @@ package com.localhost.ecsite.action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -38,22 +39,33 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	@SuppressWarnings("unchecked")
 	public String execute() throws SQLException {
 
-		// アイテム情報を取得
-		// アイテム情報をitem.japに表示させる
+		/**
+		 *
+		 * アイテム情報を取得
+		 * アイテム情報をitem.japに表示させる
+		 *
+		 */
 
+		/**
+		 * MyPageDTOから情報の引き出し
+		 */
 		myPageDTO = myPageDAO.getItemInfo();
 
 
 		Iterator<MyPageDTO> iterator = myPageDTO.iterator();
+		List<String> itemIdList = new ArrayList<>();
 		while(iterator.hasNext()){
 			MyPageDTO myPageDTO = new MyPageDTO();
 			myPageDTO = iterator.next();
 
+			itemIdList.add(String.valueOf(myPageDTO.getItemId()));
+
 		System.out.println(myPageDTO.getItemId());
 
-
 		}
+
 		session.put("myPageDTO", myPageDTO);
+		session.put("itemIdList", itemIdList);
 		myPageDTO =(ArrayList<MyPageDTO>)session.get("myPageDTO");
 
 
@@ -65,7 +77,10 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	}
 
 
-
+	/**
+	 * 情報の受け取りと設定
+	 * @return
+	 */
 	public MyPageDAO getMyPageDAO() {
 		return myPageDAO;
 	}

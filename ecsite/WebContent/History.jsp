@@ -96,7 +96,7 @@
 	</div>
 	<div id="main">
 		<div id="top">
-			<p>商品履歴</p>
+			<p>購入履歴</p>
 		</div>
 		<div>
 		<s:if test="myPageList == null">
@@ -122,7 +122,7 @@
 				</tr>
 			</s:iterator>
 			</table>
-			<s:form action="MyPageAction">
+			<s:form action="HistoryAction">
 				<input type="hidden" name="deleteFlg" value="1">
 				<s:submit value="削除" method="delete" />
 			</s:form>

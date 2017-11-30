@@ -2,6 +2,7 @@ package com.localhost.ecsite.action;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -50,6 +51,14 @@ public class HistoryAction extends ActionSupport implements SessionAware{
 
 			myPageList = historyDAO.getMyPageInfo(user_id);
 
+			List<Integer> historyItemIdList = new ArrayList<>();
+
+			for(int i = 0; i < myPageList.size(); i++) {
+				historyItemIdList.add(myPageList.get(i).getItemId());
+			}
+
+			session.put("historyItemIdList", historyItemIdList);
+
 		// 商品履歴を削除する場合
 		} else if(deleteFlg.equals("1")) {
 			delete();
@@ -64,10 +73,12 @@ public class HistoryAction extends ActionSupport implements SessionAware{
 	 */
 	public void delete() throws SQLException {
 
-		String item_id = session.get("itemId").toString();
+		@SuppressWarnings("unchecked")
+		List<Integer> historyItemIdList = (List<Integer>) session.get("historyItemIdList");
+
 		String user_id = session.get("userId").toString();
 
-		int res = historyDAO.HistoryDelete(item_id, user_id);
+		int res = historyDAO.HistoryDelete(historyItemIdList, user_id);
 
 		if(res > 0) {
 			myPageList = null;

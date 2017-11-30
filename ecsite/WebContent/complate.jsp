@@ -76,7 +76,7 @@
 		<div id="top">
 			<p>購入有難う御座いました！！！</p>
 		</div>
-		<div id="kanryo">
+		<div class="kanryo">
 			<p>購入手続きが完了致しました。</p>
 			<p>ご注文ありがとうございます。</p>
 			<div>

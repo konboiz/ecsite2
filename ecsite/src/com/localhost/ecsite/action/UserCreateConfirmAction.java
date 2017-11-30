@@ -161,6 +161,11 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 
+
+	/**
+	 * 情報の受け取りと設定
+	 * @return
+	 */
 	public String getUserId() {
 		return userId;
 	}

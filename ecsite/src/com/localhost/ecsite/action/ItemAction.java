@@ -74,9 +74,9 @@ public class ItemAction extends ActionSupport implements SessionAware {
         	session.put("amount", intCount * intPrice +420);
 
 
-
-
-
+        	/**
+        	 * 支払方法の場合分け
+        	 */
 
         	if(payment.equals("1")) {
         		payment = "クレジットカード";
@@ -90,6 +90,10 @@ public class ItemAction extends ActionSupport implements SessionAware {
         	} else if(payment.equals("4")) {
         		payment = "現金";
         	}
+
+        	/**
+        	 * 配送方法の場合分け
+        	 */
 
         	if(transport.equals("1")) {
         		transport = "通常配送";
@@ -109,6 +113,11 @@ public class ItemAction extends ActionSupport implements SessionAware {
 	      return result;
 	}
 
+
+
+		/**
+		 * 情報の受け取りと設定
+		 */
 
 		public String getPayment(){
 			return payment;

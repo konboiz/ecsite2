@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -17,76 +17,76 @@
 	<link rel="stylesheet" href="./css/jquery.bxslider.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="./js/jquery.bxslider.js"></script>
-
+	<title>マイページ</title>
 
 	<script>
 	$(function () {
-		  // スライドショー（3秒で切り替え）
+
 		  var timer = setInterval(slideshow, 3000);
 
 		  function slideshow() {
 		    $('#frame img:first').fadeOut('fast', function() {
 		      $(this).next('img').fadeIn();
-		      // 最後尾に移動
+
 		      $('#frame').append(this);
 		    });
 		  }
 
 		  $('#frame img').hover(
 		    function () {
-		      // スライドショーを中止
+
 		      clearInterval(timer);
 		    },
 		    function () {
-		      // スライドショーを再開
+
 		      timer = setInterval(slideshow, 3000);
 		    }
 		  );
 		});
 
 	$(function () {
-		  // スライドショー（3秒で切り替え）
+
 		  var timer = setInterval(slideshow, 3000);
 
 		  function slideshow() {
 		    $('#frame2 img:first').fadeOut('fast', function() {
 		      $(this).next('img').fadeIn();
-		      // 最後尾に移動
+
 		      $('#frame2').append(this);
 		    });
 		  }
 
 		  $('#frame2 img').hover(
 		    function () {
-		      // スライドショーを中止
+
 		      clearInterval(timer);
 		    },
 		    function () {
-		      // スライドショーを再開
+
 		      timer = setInterval(slideshow, 3000);
 		    }
 		  );
 		});
 
 	$(function () {
-		  // スライドショー（3秒で切り替え）
+
 		  var timer = setInterval(slideshow, 3000);
 
 		  function slideshow() {
 		    $('#frame3 img:first').fadeOut('fast', function() {
 		      $(this).next('img').fadeIn();
-		      // 最後尾に移動
+
 		      $('#frame3').append(this);
 		    });
 		  }
 
 		  $('#frame3 img').hover(
 		    function () {
-		      // スライドショーを中止
+
 		      clearInterval(timer);
 		    },
 		    function () {
-		      // スライドショーを再開
+
 		      timer = setInterval(slideshow, 3000);
 		    }
 		  );

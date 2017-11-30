@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.localhost.ecsite.dto.HistoryDTO;
 import com.localhost.ecsite.util.DBConnector;
@@ -28,6 +29,7 @@ public class HistoryDAO {
 			while(rs.next()) {
 				HistoryDTO dto = new HistoryDTO();
 
+				dto.setItemId(rs.getInt("item_id"));
 				dto.setItemName(rs.getString("item_name"));
 				dto.setAmount(rs.getInt("amount"));
 				dto.setCount(rs.getInt("count"));
@@ -48,23 +50,25 @@ public class HistoryDAO {
 	}
 
 
-	public int HistoryDelete(String item_id, String item_name) throws SQLException {
+	public int HistoryDelete(List<Integer> historyItemIdList, String user_id) throws SQLException {
 
 		 DBConnector dbConnector = new DBConnector();
 
 		 Connection con = dbConnector.getConnection();
 
 
-		String sql = "DELETE FROM item_info where item_id  = ? AND item_name  = ?";
+		String sql = "DELETE FROM buy_info where item_id  = ? AND user_id  = ?";
 
 		PreparedStatement ps;
-		int result =0;
+		int result = 0;
 		try {
-			ps = con.prepareStatement(sql);
-			ps.setString(1, item_id);
-			ps.setString(2, item_name);
+			for(int i = 0; i < historyItemIdList.size(); i++) {
+				ps = con.prepareStatement(sql);
+				ps.setInt(1, historyItemIdList.get(i));
+				ps.setString(2, user_id);
 
-			result = ps.executeUpdate();
+				result = ps.executeUpdate();
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();

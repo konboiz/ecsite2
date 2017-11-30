@@ -78,31 +78,16 @@ table {
 }
 
 #cake {
-	width:348px;
+	width:33%;
 	text-align: center;
 	float:left;
 }
-/*
-#item {
 
+.user {
+	font-weight: 900;
+    font-size: 14px;
 }
 
-#price {
-
-}
-
-#count {
-
-}
-
-#pament{
-
-}
-
-#transport{
-
-}
-*/
 
 </style>
 </head>
@@ -127,14 +112,14 @@ table {
 						<s:hidden name="itemId" value="%{itemId}" />
 					</td>
 					<td>
-						<label>商品名：&ensp;</label>
+						<label><span class="user">商品名：</span>&ensp;</label>
 						<s:property value="itemName" />
 						<input type="hidden" name="itemName" value='<s:property value="itemName" />' />
 					</td>
 				</tr>
 				<tr id="price">
 					<td>
-						<label>値段：&ensp;</label>
+						<label><span class="user">値段：</span>&ensp;</label>
 						<s:property value="price" /><span>円</span>
 						<input type="hidden" name="price" value='<s:property value="price" />' />
 
@@ -142,7 +127,7 @@ table {
 				</tr>
 				<tr id="count">
 					<td>
-						<label>購入個数：&ensp;</label>
+						<label><span class="user">購入個数：</span>&ensp;</label>
 						<select name="count">
 							<option value="1" selected="selected">1</option>
 							<option value="2">2</option>
@@ -154,7 +139,7 @@ table {
 				</tr>
 				<tr id="payment">
 					<td>
-						<label>支払方法；&ensp;</label>
+						<label><span class="user">支払方法：</span>&ensp;</label>
 						<select name="payment">
 							<option value="1" selected="selected">クレジットカード</option>
 							<option value="2">コンビニ払い・電子マネー</option>
@@ -165,7 +150,7 @@ table {
 				</tr>
 				<tr id="transport">
 					<td>
-						<label>配送方法；&ensp;</label>
+						<label><span class="user">配送方法：</span>&ensp;</label>
 						<select name="transport">
 						<option value="1" selected="selected">通常配送</option>
 						<option value="2">配送日指定</option>
@@ -175,8 +160,7 @@ table {
 						</select>
 					</td>
 				</tr>
-
-				<s:submit value="支払い確認画面へ" />
+						<s:submit value="支払い確認画面へ" />
 				<tr>
 					<td><br/></td>
 					<td><br/></td>

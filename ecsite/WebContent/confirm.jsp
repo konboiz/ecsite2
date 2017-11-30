@@ -92,7 +92,7 @@
 <body>
 	<div id="header">
 	 	<div id="pr">
-	 		<p>購入最終確認画面</p>
+	 		<p>購入確認画面</p>
 		</div>
 	</div>
 	<div id="main">
@@ -101,13 +101,12 @@
 		</div>
 		<div>
 			<s:form>
-
 				<tr>
 					<td>
 						<label><span class="user">氏名：</span></label>
 					</td>
 					<td>
-						<s:property value="#session.userName" />
+						<s:property value="#session.userName" escape="false"/>
 					</td>
 				</tr>
 				<tr>
@@ -115,7 +114,7 @@
 						<label><span class="user">お届け先：</span></label>
 					</td>
 					<td>
-						<s:property value="#session.address" />
+						<s:property value="#session.address" escape="false"/>
 					</td>
 				</tr>
 				<tr>
@@ -128,7 +127,7 @@
 						<label><span class="user">商品名：</span></label>
 					</td>
 					<td>
-						<s:property value="itemName" />
+						<s:property value="itemName" escape="false"/>
 						<input type="hidden" name="itemName" value='<s:property value="itemName" />' />
 					</td>
 				</tr>
@@ -137,7 +136,7 @@
 						<label><span class="user">値段：</span></label>
 					</td>
 					<td>
-						<s:property value="#session.price" /><span>円</span>
+						<s:property value="#session.price" escape="false" /><span>円</span>
 					</td>
 				</tr>
 				<tr>
@@ -145,7 +144,7 @@
 						<label><span class="user">購入個数：</span></label>
 					</td>
 					<td>
-						<s:property value="#session.count" /><span>個</span>
+						<s:property value="#session.count" escape="false"/><span>個</span>
 					</td>
 				</tr>
 				<tr>
@@ -159,14 +158,14 @@
 				<tr>
 					<td><span class="user">支払い方法：</span></td>
 					<td>
-						<s:property value="payment" />
+						<s:property value="payment" escape="false"/>
 						<input type="hidden" name="payment" value='<s:property value="payment" />' />
 					</td>
 				</tr>
 				<tr>
 					<td><span class="user">お届け方法：</span></td>
 					<td>
-						<s:property value="transport" />
+						<s:property value="transport"  escape="false"/>
 						<input type="hidden" name="transport" value='<s:property value="transport" />' />
 					</td>
 				</tr>
@@ -175,7 +174,7 @@
 						<label><span class="user">合計金額：</span></label>
 					</td>
 					<td>
-						<s:property value="#session.amount" /><span>円</span>
+						<s:property value="#session.amount" escape="false"/><span>円</span>
 					</td>
 				</tr>
 				<tr>

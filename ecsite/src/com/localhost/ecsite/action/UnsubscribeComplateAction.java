@@ -74,18 +74,17 @@ public class UnsubscribeComplateAction extends ActionSupport implements SessionA
 
 		}
 
-
-
-
+		/**
+		 * 情報の受け取りと設定
+		 * @return
+		 */
 			public String getDeleteFlg() {
 					return deleteFlg;
 				}
 
-
 				public void setDeleteFlg(String deleteFlg) {
 					this.deleteFlg = deleteFlg;
 				}
-
 
 			@Override
 			public void setSession(Map<String, Object> session) {

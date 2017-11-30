@@ -13,30 +13,45 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UpdatePasswordComplateAction extends ActionSupport implements SessionAware {
 
 
-
+	/**
+	 * 旧パスワード
+	 */
 	private String password_1;
 
+	/**
+	 * 新パスワード
+	 */
 	private String password_2;
 
+	/**
+	 * セッション
+	 */
 	public Map<String, Object> session;
 
+	/**
+	 * エラーメッセージ
+	 */
 	private String errorMessage = "";
 
+	/**
+	 * UpdatePasswordDAOの情報格納
+	 */
 	private UpdatePasswordComplateDAO updatePasswordComplateDAO = new UpdatePasswordComplateDAO();
 
+	/**
+	 * LoginDTOの情報格納
+	 */
 	private LoginDTO loginDTO = new LoginDTO();
 
+	/**
+	 * user_id への情報格納
+	 */
 	private String user_id = loginDTO.getUserId();
 
 
-	public LoginDTO getLoginDTO() {
-		return loginDTO;
-	}
-
-	public void setLoginDTO(LoginDTO loginDTO) {
-		this.loginDTO = loginDTO;
-	}
-
+	/**
+	 * エラーメッセージの設定
+	 */
 	public String execute() throws SQLException {
 
 		String result = SUCCESS;
@@ -112,6 +127,13 @@ public class UpdatePasswordComplateAction extends ActionSupport implements Sessi
 		return result;
 	}
 
+
+
+	/**
+	 *　情報の受け取りと設定
+	 * @return
+	 */
+
 	public String getUser_id() {
 		return user_id;
 	}
@@ -147,21 +169,12 @@ public class UpdatePasswordComplateAction extends ActionSupport implements Sessi
 		this.session = session;
 	}
 
-	/**
-	 * errorMessageを取得します。
-	 *
-	 * @return errorMessage
-	 */
+
 	public String getErrorMessage() {
 		return errorMessage;
 	}
 
-	/**
-	 * errorMessageを設定します。
-	 *
-	 * @param errorMessage
-	 *            errorMessage
-	 */
+
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
@@ -172,6 +185,15 @@ public class UpdatePasswordComplateAction extends ActionSupport implements Sessi
 
 	public void setUpdatePasswordComplateDAO(UpdatePasswordComplateDAO updatePasswordComplateDAO) {
 		this.updatePasswordComplateDAO = updatePasswordComplateDAO;
+	}
+
+
+	public LoginDTO getLoginDTO() {
+		return loginDTO;
+	}
+
+	public void setLoginDTO(LoginDTO loginDTO) {
+		this.loginDTO = loginDTO;
 	}
 
 

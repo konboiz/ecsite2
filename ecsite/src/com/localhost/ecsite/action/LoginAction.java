@@ -19,9 +19,10 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 */
 	private String password;
 
+	/**
+	 * 電話番号
+	 */
 	private String tel;
-
-
 
 	/**
 	 * ユーザーID
@@ -32,11 +33,11 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * LoginDTOへ情報格納
 	 */
 	private LoginDTO loginDTO = new LoginDTO();
+
 	/**
 	 * LoginDAOから情報を引き出す
 	 */
 	private LoginDAO loginDAO = new LoginDAO();
-
 
 	/**
 	 * セッション
@@ -45,7 +46,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
 
 
-public String execute() throws  SQLException {
+	public String execute() throws  SQLException {
 
 
 	String result = ERROR;
@@ -98,6 +99,11 @@ public String execute() throws  SQLException {
 		this.session = session;
 
 	}
+
+	/**
+	 * 情報の受け取りと設定
+	 *
+	 */
 
 	public String getUserName() {
 		return userName;

@@ -14,7 +14,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>登録確認画面</title>
+	<title>ユーザー登録確認画面</title>
 	<style type="text/css">
 		/* ========TAG LAYOUT======== */
 		body {

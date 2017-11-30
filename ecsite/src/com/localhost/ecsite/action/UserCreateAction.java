@@ -321,7 +321,7 @@ public class UserCreateAction extends ActionSupport implements SessionAware {
 
 
 	/**
-	 * get set
+	 * 情報の受け取りと設定
 	 * @return
 	 */
 

@@ -10,7 +10,7 @@
 <meta http-equiv="imagetoolbar" content="no" />
 <meta name="description" content="" />
 <meta name="keywords" content="" />
-<title>login画面</title>
+<title>ログイン画面</title>
 <style type="text/css">
 body {
 	margin: 0;

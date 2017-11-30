@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>変更完了画面</title>
+	<title>パスワード変更完了画面</title>
 	<style type="text/css">
 		/* ========TAG LAYOUT======== */
 		body {

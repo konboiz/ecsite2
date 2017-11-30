@@ -2,6 +2,16 @@ package com.localhost.ecsite.dto;
 
 public class HistoryDTO {
 
+	private int itemId;
+
+	public int getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
 	public String itemName;
 
 	public int amount;

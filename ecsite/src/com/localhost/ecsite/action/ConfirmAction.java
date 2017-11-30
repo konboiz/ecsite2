@@ -23,19 +23,22 @@ public class ConfirmAction extends ActionSupport implements SessionAware {
 	public Map<String,Object> session;
 
 
+	/**
+	 * confirmDAO
+	 */
 		private ConfirmDAO confirmDAO = new ConfirmDAO();
 
 		/**
 		 * 商品購入情報登録
 		 *
-		 * @author internous
 		 */
 		public String execute() throws SQLException {
 
 			String result = SUCCESS;
 
-
-
+			/**
+			 * confirmDAOの情報受け渡し
+			 */
 
 			confirmDAO.buyItemInfo (
 
@@ -55,12 +58,18 @@ public class ConfirmAction extends ActionSupport implements SessionAware {
 			return result;
 		}
 
+
+
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
 
 
+	/**
+	 * 情報の受け取りと設定
+	 * @return
+	 */
 	public int getItemId() {
 		return itemId;
 	}
